@@ -4523,3 +4523,1285 @@ Processing by ProjectsController#index as HTML
 Completed 200 OK in 10ms (Views: 7.0ms | ActiveRecord: 1.5ms)
 
 
+Started POST "/api/login" for 127.0.0.1 at 2017-07-21 16:11:47 +0100
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AuthenticationsController#login as HTML
+  Parameters: {"email"=>"simon@simon.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"simon@simon.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "simon@simon.com"], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   [1m[36mReview Load (19.9ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   [1m[36mTender Load (22.7ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   [1m[36mConversation Load (8.4ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."sender_id" = $1[0m  [["sender_id", 5]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (113.33ms)
+Completed 200 OK in 239ms (Views: 56.7ms | ActiveRecord: 66.4ms)
+
+
+Started GET "/api/projects" for 127.0.0.1 at 2017-07-21 16:11:48 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mProject Load (0.9ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+[active_model_serializers]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.3ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."project_id" = $1[0m  [["project_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (11.94ms)
+Completed 200 OK in 41ms (Views: 32.3ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/api/users" for 127.0.0.1 at 2017-07-21 16:11:52 +0100
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+[active_model_serializers]   [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.6ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mConversation Load (0.2ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."sender_id" = $1[0m  [["sender_id", 1]]
+[active_model_serializers]   [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mTender Load (0.2ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mConversation Load (0.2ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."sender_id" = $1[0m  [["sender_id", 2]]
+[active_model_serializers]   [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   [1m[36mTender Load (0.4ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   [1m[36mConversation Load (0.3ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."sender_id" = $1[0m  [["sender_id", 3]]
+[active_model_serializers]   [1m[36mProject Load (0.9ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 4]]
+[active_model_serializers]   [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 4]]
+[active_model_serializers]   [1m[36mTender Load (0.3ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 4]]
+[active_model_serializers]   [1m[36mConversation Load (0.2ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."sender_id" = $1[0m  [["sender_id", 4]]
+[active_model_serializers]   [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   [1m[36mTender Load (0.2ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   [1m[36mConversation Load (0.2ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."sender_id" = $1[0m  [["sender_id", 5]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (52.12ms)
+Completed 200 OK in 56ms (Views: 47.0ms | ActiveRecord: 7.0ms)
+
+
+Started POST "/api/login" for 127.0.0.1 at 2017-07-21 16:11:58 +0100
+Processing by AuthenticationsController#login as HTML
+  Parameters: {"email"=>"simon@simon.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"simon@simon.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "simon@simon.com"], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   [1m[36mTender Load (0.1ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   [1m[36mConversation Load (0.1ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."sender_id" = $1[0m  [["sender_id", 5]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (5.01ms)
+Completed 200 OK in 80ms (Views: 4.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/projects" for 127.0.0.1 at 2017-07-21 16:11:58 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+[active_model_serializers]   [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.3ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."project_id" = $1[0m  [["project_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (5.46ms)
+Completed 200 OK in 9ms (Views: 6.0ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/api/projects/1" for 127.0.0.1 at 2017-07-21 16:11:59 +0100
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mProject Load (0.7ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.4ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."project_id" = $1[0m  [["project_id", 1]]
+[active_model_serializers] Rendered ProjectSerializer with ActiveModelSerializers::Adapter::Attributes (5.49ms)
+Completed 200 OK in 12ms (Views: 5.7ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/api/projects/1" for 127.0.0.1 at 2017-07-21 16:12:01 +0100
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.3ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."project_id" = $1[0m  [["project_id", 1]]
+[active_model_serializers] Rendered ProjectSerializer with ActiveModelSerializers::Adapter::Attributes (4.93ms)
+Completed 200 OK in 9ms (Views: 5.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/api/projects/1" for 127.0.0.1 at 2017-07-21 16:14:25 +0100
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.4ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."project_id" = $1[0m  [["project_id", 1]]
+[active_model_serializers] Rendered ProjectSerializer with ActiveModelSerializers::Adapter::Attributes (4.61ms)
+Completed 200 OK in 8ms (Views: 4.4ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/api/projects" for 127.0.0.1 at 2017-07-21 16:14:28 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+[active_model_serializers]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.4ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."project_id" = $1[0m  [["project_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (5.74ms)
+Completed 200 OK in 10ms (Views: 6.8ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/api/projects/1" for 127.0.0.1 at 2017-07-21 16:14:29 +0100
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mProject Load (0.6ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.3ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."project_id" = $1[0m  [["project_id", 1]]
+[active_model_serializers] Rendered ProjectSerializer with ActiveModelSerializers::Adapter::Attributes (4.11ms)
+Completed 200 OK in 8ms (Views: 4.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/api/users" for 127.0.0.1 at 2017-07-21 16:14:33 +0100
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+[active_model_serializers]   [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.2ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mConversation Load (0.2ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."sender_id" = $1[0m  [["sender_id", 1]]
+[active_model_serializers]   [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mTender Load (0.2ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mConversation Load (0.3ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."sender_id" = $1[0m  [["sender_id", 2]]
+[active_model_serializers]   [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   [1m[36mTender Load (0.1ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   [1m[36mConversation Load (0.1ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."sender_id" = $1[0m  [["sender_id", 3]]
+[active_model_serializers]   [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 4]]
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 4]]
+[active_model_serializers]   [1m[36mTender Load (0.1ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 4]]
+[active_model_serializers]   [1m[36mConversation Load (0.2ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."sender_id" = $1[0m  [["sender_id", 4]]
+[active_model_serializers]   [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   [1m[36mTender Load (0.3ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   [1m[36mConversation Load (0.2ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."sender_id" = $1[0m  [["sender_id", 5]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (40.89ms)
+Completed 200 OK in 44ms (Views: 37.2ms | ActiveRecord: 5.5ms)
+
+
+Started POST "/api/projects" for 127.0.0.1 at 2017-07-21 16:14:58 +0100
+Processing by ProjectsController#create as HTML
+  Parameters: {"title"=>"Simons Post", "description"=>"iuhf;pwhfbsodhfbsdhlbvbsludfvsv", "project_deadline"=>"2017-07-19T23:00:00.000Z", "bid_deadline"=>"2017-07-29T23:00:00.000Z", "tech_stack"=>"code and some more code", "budget"=>"1", "is_priority"=>true, "project"=>{"title"=>"Simons Post", "description"=>"iuhf;pwhfbsodhfbsdhlbvbsludfvsv", "project_deadline"=>"2017-07-19T23:00:00.000Z", "bid_deadline"=>"2017-07-29T23:00:00.000Z", "tech_stack"=>"code and some more code", "budget"=>"1", "is_priority"=>true}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "projects" ("title", "description", "project_deadline", "bid_deadline", "tech_stack", "budget", "is_priority", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Simons Post"], ["description", "iuhf;pwhfbsodhfbsdhlbvbsludfvsv"], ["project_deadline", "2017-07-19 23:00:00"], ["bid_deadline", "2017-07-29 23:00:00"], ["tech_stack", "code and some more code"], ["budget", 1], ["is_priority", "t"], ["user_id", 5], ["created_at", "2017-07-21 15:14:58.171807"], ["updated_at", "2017-07-21 15:14:58.171807"]]
+  [1m[35m (19.9ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers]   [1m[36mTender Load (0.3ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."project_id" = $1[0m  [["project_id", 2]]
+[active_model_serializers] Rendered ProjectSerializer with ActiveModelSerializers::Adapter::Attributes (2.86ms)
+Completed 201 Created in 33ms (Views: 3.8ms | ActiveRecord: 21.7ms)
+
+
+Started GET "/api/projects" for 127.0.0.1 at 2017-07-21 16:14:58 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mProject Load (0.6ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+[active_model_serializers]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.3ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."project_id" = $1[0m  [["project_id", 1]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.3ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."project_id" = $1[0m  [["project_id", 2]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (9.33ms)
+Completed 200 OK in 13ms (Views: 9.8ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/api/projects/2" for 127.0.0.1 at 2017-07-21 16:14:59 +0100
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.3ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."project_id" = $1[0m  [["project_id", 2]]
+[active_model_serializers] Rendered ProjectSerializer with ActiveModelSerializers::Adapter::Attributes (3.72ms)
+Completed 200 OK in 6ms (Views: 3.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/projects/2" for 127.0.0.1 at 2017-07-21 16:15:00 +0100
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.4ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."project_id" = $1[0m  [["project_id", 2]]
+[active_model_serializers] Rendered ProjectSerializer with ActiveModelSerializers::Adapter::Attributes (4.81ms)
+Completed 200 OK in 8ms (Views: 4.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/api/projects/2" for 127.0.0.1 at 2017-07-21 16:15:33 +0100
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.2ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."project_id" = $1[0m  [["project_id", 2]]
+[active_model_serializers] Rendered ProjectSerializer with ActiveModelSerializers::Adapter::Attributes (3.78ms)
+Completed 200 OK in 7ms (Views: 4.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/users" for 127.0.0.1 at 2017-07-21 16:15:45 +0100
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+[active_model_serializers]   [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.2ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mConversation Load (0.2ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."sender_id" = $1[0m  [["sender_id", 1]]
+[active_model_serializers]   [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mTender Load (0.3ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mConversation Load (0.3ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."sender_id" = $1[0m  [["sender_id", 2]]
+[active_model_serializers]   [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   [1m[36mTender Load (0.2ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   [1m[36mConversation Load (0.2ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."sender_id" = $1[0m  [["sender_id", 3]]
+[active_model_serializers]   [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 4]]
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 4]]
+[active_model_serializers]   [1m[36mTender Load (0.2ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 4]]
+[active_model_serializers]   [1m[36mConversation Load (0.2ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."sender_id" = $1[0m  [["sender_id", 4]]
+[active_model_serializers]   [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   [1m[36mTender Load (0.2ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   [1m[36mConversation Load (0.1ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."sender_id" = $1[0m  [["sender_id", 5]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (43.35ms)
+Completed 200 OK in 48ms (Views: 40.0ms | ActiveRecord: 6.3ms)
+
+
+Started GET "/api/projects" for 127.0.0.1 at 2017-07-21 16:15:47 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.4ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."project_id" = $1[0m  [["project_id", 1]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.5ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."project_id" = $1[0m  [["project_id", 2]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (10.42ms)
+Completed 200 OK in 14ms (Views: 10.5ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/api/projects/2" for 127.0.0.1 at 2017-07-21 16:15:49 +0100
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.3ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."project_id" = $1[0m  [["project_id", 2]]
+[active_model_serializers] Rendered ProjectSerializer with ActiveModelSerializers::Adapter::Attributes (3.63ms)
+Completed 200 OK in 7ms (Views: 3.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/projects" for 127.0.0.1 at 2017-07-21 16:19:50 +0100
+Processing by ProjectsController#index as HTML
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/login" for 127.0.0.1 at 2017-07-21 16:30:01 +0100
+Processing by AuthenticationsController#login as HTML
+  Parameters: {"email"=>"simon@simon.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"simon@simon.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "simon@simon.com"], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   [1m[36mTender Load (0.1ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   [1m[36mConversation Load (0.1ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."sender_id" = $1[0m  [["sender_id", 5]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (5.91ms)
+Completed 200 OK in 79ms (Views: 10.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/projects" for 127.0.0.1 at 2017-07-21 16:30:01 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+[active_model_serializers]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.4ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."project_id" = $1[0m  [["project_id", 1]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.3ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."project_id" = $1[0m  [["project_id", 2]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (9.9ms)
+Completed 200 OK in 13ms (Views: 10.0ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/api/projects" for 127.0.0.1 at 2017-07-21 16:30:59 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+[active_model_serializers]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.3ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."project_id" = $1[0m  [["project_id", 1]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.2ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."project_id" = $1[0m  [["project_id", 2]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (8.62ms)
+Completed 200 OK in 11ms (Views: 8.8ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/api/projects" for 127.0.0.1 at 2017-07-21 16:31:20 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+[active_model_serializers]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.2ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."project_id" = $1[0m  [["project_id", 1]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.3ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."project_id" = $1[0m  [["project_id", 2]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (7.96ms)
+Completed 200 OK in 13ms (Views: 8.7ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/api/projects" for 127.0.0.1 at 2017-07-21 16:31:25 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.3ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."project_id" = $1[0m  [["project_id", 1]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.3ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."project_id" = $1[0m  [["project_id", 2]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (10.44ms)
+Completed 200 OK in 13ms (Views: 10.6ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/api/projects" for 127.0.0.1 at 2017-07-21 16:31:26 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mProject Load (0.9ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+[active_model_serializers]   [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.3ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."project_id" = $1[0m  [["project_id", 1]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.2ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."project_id" = $1[0m  [["project_id", 2]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (9.11ms)
+Completed 200 OK in 14ms (Views: 9.8ms | ActiveRecord: 2.3ms)
+
+
+Started POST "/api/login" for 127.0.0.1 at 2017-07-21 16:31:51 +0100
+Processing by AuthenticationsController#login as HTML
+  Parameters: {"email"=>"simon@simon.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"simon@simon.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "simon@simon.com"], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   [1m[36mTender Load (0.1ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   [1m[36mConversation Load (0.1ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."sender_id" = $1[0m  [["sender_id", 5]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (6.2ms)
+Completed 200 OK in 78ms (Views: 5.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/projects" for 127.0.0.1 at 2017-07-21 16:31:51 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+[active_model_serializers]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.2ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."project_id" = $1[0m  [["project_id", 1]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.3ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."project_id" = $1[0m  [["project_id", 2]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (9.95ms)
+Completed 200 OK in 13ms (Views: 10.2ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/api/projects" for 127.0.0.1 at 2017-07-21 16:34:30 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mProject Load (0.6ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+[active_model_serializers]   [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.2ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."project_id" = $1[0m  [["project_id", 1]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.2ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."project_id" = $1[0m  [["project_id", 2]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (9.22ms)
+Completed 200 OK in 14ms (Views: 10.2ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/api/projects" for 127.0.0.1 at 2017-07-21 16:34:35 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.1ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."project_id" = $1[0m  [["project_id", 1]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.1ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."project_id" = $1[0m  [["project_id", 2]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (5.78ms)
+Completed 200 OK in 9ms (Views: 6.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/api/projects" for 127.0.0.1 at 2017-07-21 16:34:49 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mProject Load (0.6ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+[active_model_serializers]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.5ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."project_id" = $1[0m  [["project_id", 1]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.7ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."project_id" = $1[0m  [["project_id", 2]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (15.68ms)
+Completed 200 OK in 21ms (Views: 15.7ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/api/projects" for 127.0.0.1 at 2017-07-21 16:34:50 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+[active_model_serializers]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.4ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."project_id" = $1[0m  [["project_id", 1]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.2ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."project_id" = $1[0m  [["project_id", 2]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (8.63ms)
+Completed 200 OK in 12ms (Views: 8.7ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/api/projects" for 127.0.0.1 at 2017-07-21 16:35:35 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+[active_model_serializers]   [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.4ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."project_id" = $1[0m  [["project_id", 1]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.3ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."project_id" = $1[0m  [["project_id", 2]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (11.53ms)
+Completed 200 OK in 16ms (Views: 11.7ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/api/projects" for 127.0.0.1 at 2017-07-21 16:35:38 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+[active_model_serializers]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.3ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."project_id" = $1[0m  [["project_id", 1]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.2ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."project_id" = $1[0m  [["project_id", 2]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (9.36ms)
+Completed 200 OK in 12ms (Views: 9.7ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/api/users/%5Bobject%20Object%5D" for 127.0.0.1 at 2017-07-21 16:35:39 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"[object Object]"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=[object Object]):
+  
+app/controllers/users_controller.rb:44:in `set_user'
+Started GET "/api/users/%5Bobject%20Object%5D" for 127.0.0.1 at 2017-07-21 16:37:21 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"[object Object]"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 3ms (ActiveRecord: 0.6ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=[object Object]):
+  
+app/controllers/users_controller.rb:44:in `set_user'
+Started GET "/api/users/%5Bobject%20Object%5D" for 127.0.0.1 at 2017-07-21 16:44:37 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"[object Object]"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 3ms (ActiveRecord: 1.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=[object Object]):
+  
+app/controllers/users_controller.rb:44:in `set_user'
+Started GET "/api/users/%5Bobject%20Object%5D" for 127.0.0.1 at 2017-07-21 16:44:53 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"[object Object]"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 3ms (ActiveRecord: 0.9ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=[object Object]):
+  
+app/controllers/users_controller.rb:44:in `set_user'
+Started GET "/api/users/%5Bobject%20Object%5D" for 127.0.0.1 at 2017-07-21 16:45:13 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"[object Object]"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+Started GET "/api/users" for 127.0.0.1 at 2017-07-21 16:45:13 +0100
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Processing by UsersController#index as HTML
+Completed 404 Not Found in 5ms (ActiveRecord: 1.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=[object Object]):
+  
+app/controllers/users_controller.rb:44:in `set_user'
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+[active_model_serializers]   [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.7ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mConversation Load (0.5ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."sender_id" = $1[0m  [["sender_id", 1]]
+[active_model_serializers]   [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mTender Load (0.2ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mConversation Load (0.2ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."sender_id" = $1[0m  [["sender_id", 2]]
+[active_model_serializers]   [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   [1m[36mTender Load (0.3ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   [1m[36mConversation Load (0.2ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."sender_id" = $1[0m  [["sender_id", 3]]
+[active_model_serializers]   [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 4]]
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 4]]
+[active_model_serializers]   [1m[36mTender Load (0.2ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 4]]
+[active_model_serializers]   [1m[36mConversation Load (0.3ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."sender_id" = $1[0m  [["sender_id", 4]]
+[active_model_serializers]   [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   [1m[36mTender Load (0.3ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   [1m[36mConversation Load (0.4ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."sender_id" = $1[0m  [["sender_id", 5]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (42.99ms)
+Completed 200 OK in 191ms (Views: 37.1ms | ActiveRecord: 118.7ms)
+
+
+Started GET "/api/users" for 127.0.0.1 at 2017-07-21 16:45:35 +0100
+Started GET "/api/users/%5Bobject%20Object%5D" for 127.0.0.1 at 2017-07-21 16:45:35 +0100
+Processing by UsersController#index as HTML
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"[object Object]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 6ms (ActiveRecord: 3.9ms)
+
+
+[active_model_serializers]   [1m[36mProject Load (1.0ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 1]]
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=[object Object]):
+  
+app/controllers/users_controller.rb:44:in `set_user'
+[active_model_serializers]   [1m[36mReview Load (30.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.4ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mConversation Load (0.7ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."sender_id" = $1[0m  [["sender_id", 1]]
+[active_model_serializers]   [1m[36mProject Load (0.6ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mTender Load (0.3ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mConversation Load (0.4ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."sender_id" = $1[0m  [["sender_id", 2]]
+[active_model_serializers]   [1m[36mProject Load (0.7ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   [1m[36mTender Load (0.5ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   [1m[36mConversation Load (1.2ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."sender_id" = $1[0m  [["sender_id", 3]]
+[active_model_serializers]   [1m[36mProject Load (1.7ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 4]]
+[active_model_serializers]   [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 4]]
+[active_model_serializers]   [1m[36mTender Load (2.3ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 4]]
+[active_model_serializers]   [1m[36mConversation Load (1.3ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."sender_id" = $1[0m  [["sender_id", 4]]
+[active_model_serializers]   [1m[36mProject Load (17.9ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   [1m[36mReview Load (18.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   [1m[36mTender Load (1.7ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   [1m[36mConversation Load (0.3ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."sender_id" = $1[0m  [["sender_id", 5]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (158.91ms)
+Completed 200 OK in 162ms (Views: 78.7ms | ActiveRecord: 82.1ms)
+
+
+Started GET "/api/users/%5Bobject%20Object%5D" for 127.0.0.1 at 2017-07-21 16:45:53 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"[object Object]"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.6ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=[object Object]):
+  
+app/controllers/users_controller.rb:44:in `set_user'
+Started GET "/api/users/%5Bobject%20Object%5D" for 127.0.0.1 at 2017-07-21 16:45:53 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"[object Object]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=[object Object]):
+  
+app/controllers/users_controller.rb:44:in `set_user'
+Started GET "/api/users/%5Bobject%20Object%5D" for 127.0.0.1 at 2017-07-21 16:46:03 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"[object Object]"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 4ms (ActiveRecord: 1.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=[object Object]):
+  
+app/controllers/users_controller.rb:44:in `set_user'
+Started GET "/api/users/%5Bobject%20Object%5D" for 127.0.0.1 at 2017-07-21 16:46:15 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"[object Object]"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 3ms (ActiveRecord: 0.6ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=[object Object]):
+  
+app/controllers/users_controller.rb:44:in `set_user'
+Started GET "/api/users/%5Bobject%20Object%5D" for 127.0.0.1 at 2017-07-21 16:46:15 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"[object Object]"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=[object Object]):
+  
+app/controllers/users_controller.rb:44:in `set_user'
+Started GET "/api/users/%5Bobject%20Object%5D" for 127.0.0.1 at 2017-07-21 16:46:25 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"[object Object]"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=[object Object]):
+  
+app/controllers/users_controller.rb:44:in `set_user'
+Started GET "/api/users/%5Bobject%20Object%5D" for 127.0.0.1 at 2017-07-21 16:46:35 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"[object Object]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=[object Object]):
+  
+app/controllers/users_controller.rb:44:in `set_user'
+Started GET "/api/users/%5Bobject%20Object%5D" for 127.0.0.1 at 2017-07-21 16:47:06 +0100
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"[object Object]"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 59ms (ActiveRecord: 27.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=[object Object]):
+  
+app/controllers/users_controller.rb:44:in `set_user'
+Started GET "/api/users/%5Bobject%20Object%5D" for 127.0.0.1 at 2017-07-21 16:51:51 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"[object Object]"}
+  [1m[36mUser Load (4.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 53ms (ActiveRecord: 38.8ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=[object Object]):
+  
+app/controllers/users_controller.rb:44:in `set_user'
+Started GET "/api/users/%5Bobject%20Object%5D" for 127.0.0.1 at 2017-07-21 16:52:48 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"[object Object]"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 3ms (ActiveRecord: 0.9ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=[object Object]):
+  
+app/controllers/users_controller.rb:44:in `set_user'
+Started GET "/api/users/%5Bobject%20Object%5D" for 127.0.0.1 at 2017-07-21 16:54:33 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"[object Object]"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 3ms (ActiveRecord: 1.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=[object Object]):
+  
+app/controllers/users_controller.rb:44:in `set_user'
+Started GET "/api/users/%5Bobject%20Object%5D" for 127.0.0.1 at 2017-07-21 16:54:49 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"[object Object]"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 3ms (ActiveRecord: 1.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=[object Object]):
+  
+app/controllers/users_controller.rb:44:in `set_user'
+Started GET "/api/users/%5Bobject%20Object%5D" for 127.0.0.1 at 2017-07-21 16:56:13 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"[object Object]"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.6ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=[object Object]):
+  
+app/controllers/users_controller.rb:44:in `set_user'
+Started GET "/api/users/1" for 127.0.0.1 at 2017-07-21 16:58:55 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mProject Load (4.9ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mReview Load (22.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mTender Load (18.4ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mConversation Load (0.6ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."sender_id" = $1[0m  [["sender_id", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (172.38ms)
+Completed 200 OK in 201ms (Views: 106.9ms | ActiveRecord: 92.4ms)
+
+
+Started GET "/api/users/1" for 127.0.0.1 at 2017-07-21 16:59:40 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mProject Load (0.9ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mReview Load (1.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mTender Load (1.5ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mConversation Load (0.4ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."sender_id" = $1[0m  [["sender_id", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (15.36ms)
+Completed 200 OK in 20ms (Views: 12.0ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/api/users/1" for 127.0.0.1 at 2017-07-21 16:59:45 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mProject Load (0.6ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.5ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mConversation Load (0.4ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."sender_id" = $1[0m  [["sender_id", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (11.06ms)
+Completed 200 OK in 15ms (Views: 9.9ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/api/users/1" for 127.0.0.1 at 2017-07-21 16:59:51 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mProject Load (2.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.3ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mConversation Load (0.2ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."sender_id" = $1[0m  [["sender_id", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (10.1ms)
+Completed 200 OK in 15ms (Views: 7.6ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/api/users/1" for 127.0.0.1 at 2017-07-21 17:00:46 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.6ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mConversation Load (0.3ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."sender_id" = $1[0m  [["sender_id", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (7.23ms)
+Completed 200 OK in 10ms (Views: 6.2ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/api/users/1" for 127.0.0.1 at 2017-07-21 17:01:22 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.5ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mConversation Load (0.3ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."sender_id" = $1[0m  [["sender_id", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (9.96ms)
+Completed 200 OK in 13ms (Views: 8.8ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/api/users/1" for 127.0.0.1 at 2017-07-21 17:01:36 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mProject Load (3.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mReview Load (6.9ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.5ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mConversation Load (0.3ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."sender_id" = $1[0m  [["sender_id", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (20.88ms)
+Completed 200 OK in 25ms (Views: 10.2ms | ActiveRecord: 12.1ms)
+
+
+Started GET "/api/users/1" for 127.0.0.1 at 2017-07-21 17:01:36 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.4ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mConversation Load (0.3ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."sender_id" = $1[0m  [["sender_id", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (8.96ms)
+Completed 200 OK in 13ms (Views: 7.9ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/api/users/1" for 127.0.0.1 at 2017-07-21 17:01:42 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.4ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mConversation Load (0.4ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."sender_id" = $1[0m  [["sender_id", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (9.03ms)
+Completed 200 OK in 12ms (Views: 7.9ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/api/users/1" for 127.0.0.1 at 2017-07-21 17:02:48 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mProject Load (1.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.5ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mConversation Load (0.4ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."sender_id" = $1[0m  [["sender_id", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (12.03ms)
+Completed 200 OK in 15ms (Views: 9.9ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/api/users" for 127.0.0.1 at 2017-07-21 17:09:37 +0100
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+[active_model_serializers]   [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.2ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mConversation Load (0.2ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."sender_id" = $1[0m  [["sender_id", 1]]
+[active_model_serializers]   [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mTender Load (0.1ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mConversation Load (0.1ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."sender_id" = $1[0m  [["sender_id", 2]]
+[active_model_serializers]   [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   [1m[36mTender Load (0.1ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   [1m[36mConversation Load (0.1ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."sender_id" = $1[0m  [["sender_id", 3]]
+[active_model_serializers]   [1m[36mProject Load (0.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 4]]
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 4]]
+[active_model_serializers]   [1m[36mTender Load (0.1ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 4]]
+[active_model_serializers]   [1m[36mConversation Load (0.1ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."sender_id" = $1[0m  [["sender_id", 4]]
+[active_model_serializers]   [1m[36mProject Load (0.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   [1m[36mTender Load (0.1ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   [1m[36mConversation Load (0.1ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."sender_id" = $1[0m  [["sender_id", 5]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (69.96ms)
+Completed 200 OK in 75ms (Views: 47.8ms | ActiveRecord: 25.7ms)
+
+
+Started GET "/api/projects" for 127.0.0.1 at 2017-07-21 17:09:41 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+[active_model_serializers]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.6ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."project_id" = $1[0m  [["project_id", 1]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.7ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."project_id" = $1[0m  [["project_id", 2]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (17.02ms)
+Completed 200 OK in 21ms (Views: 16.7ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/api/users" for 127.0.0.1 at 2017-07-21 17:09:43 +0100
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+[active_model_serializers]   [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.4ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mConversation Load (0.3ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."sender_id" = $1[0m  [["sender_id", 1]]
+[active_model_serializers]   [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mTender Load (0.2ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mConversation Load (0.2ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."sender_id" = $1[0m  [["sender_id", 2]]
+[active_model_serializers]   [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   [1m[36mTender Load (0.2ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   [1m[36mConversation Load (0.1ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."sender_id" = $1[0m  [["sender_id", 3]]
+[active_model_serializers]   [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 4]]
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 4]]
+[active_model_serializers]   [1m[36mTender Load (0.2ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 4]]
+[active_model_serializers]   [1m[36mConversation Load (0.4ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."sender_id" = $1[0m  [["sender_id", 4]]
+[active_model_serializers]   [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   [1m[36mTender Load (0.2ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   [1m[36mConversation Load (0.2ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."sender_id" = $1[0m  [["sender_id", 5]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (45.85ms)
+Completed 200 OK in 51ms (Views: 42.1ms | ActiveRecord: 6.6ms)
+
+
+Started GET "/api/projects/1" for 127.0.0.1 at 2017-07-21 17:12:49 +0100
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.6ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."project_id" = $1[0m  [["project_id", 1]]
+[active_model_serializers] Rendered ProjectSerializer with ActiveModelSerializers::Adapter::Attributes (8.77ms)
+Completed 200 OK in 14ms (Views: 8.4ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/api/projects/3" for 127.0.0.1 at 2017-07-21 17:12:54 +0100
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Completed 404 Not Found in 3ms (ActiveRecord: 0.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Project with 'id'=3):
+  
+app/controllers/projects_controller.rb:45:in `set_project'
+Started GET "/api/projects/2" for 127.0.0.1 at 2017-07-21 17:12:59 +0100
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mProject Load (0.7ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.5ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."project_id" = $1[0m  [["project_id", 2]]
+[active_model_serializers] Rendered ProjectSerializer with ActiveModelSerializers::Adapter::Attributes (3.66ms)
+Completed 200 OK in 8ms (Views: 3.6ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/api/projects/2" for 127.0.0.1 at 2017-07-21 17:14:12 +0100
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mProject Load (1.1ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.4ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."project_id" = $1[0m  [["project_id", 2]]
+[active_model_serializers] Rendered ProjectSerializer with ActiveModelSerializers::Adapter::Attributes (5.33ms)
+Completed 200 OK in 10ms (Views: 5.7ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/api/projects" for 127.0.0.1 at 2017-07-21 17:14:18 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+[active_model_serializers]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.4ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."project_id" = $1[0m  [["project_id", 1]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.5ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."project_id" = $1[0m  [["project_id", 2]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (11.45ms)
+Completed 200 OK in 15ms (Views: 11.5ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/api/users" for 127.0.0.1 at 2017-07-21 17:14:20 +0100
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+[active_model_serializers]   [1m[36mProject Load (0.6ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mReview Load (0.7ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.3ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mConversation Load (1.0ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."sender_id" = $1[0m  [["sender_id", 1]]
+[active_model_serializers]   [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mTender Load (0.3ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mConversation Load (0.2ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."sender_id" = $1[0m  [["sender_id", 2]]
+[active_model_serializers]   [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   [1m[36mTender Load (0.1ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   [1m[36mConversation Load (0.1ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."sender_id" = $1[0m  [["sender_id", 3]]
+[active_model_serializers]   [1m[36mProject Load (0.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 4]]
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 4]]
+[active_model_serializers]   [1m[36mTender Load (0.2ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 4]]
+[active_model_serializers]   [1m[36mConversation Load (0.2ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."sender_id" = $1[0m  [["sender_id", 4]]
+[active_model_serializers]   [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   [1m[36mTender Load (0.3ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   [1m[36mConversation Load (0.2ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."sender_id" = $1[0m  [["sender_id", 5]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (50.29ms)
+Completed 200 OK in 54ms (Views: 45.6ms | ActiveRecord: 6.9ms)
+
+
+Started GET "/api/projects" for 127.0.0.1 at 2017-07-21 17:14:25 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mProject Load (0.6ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+[active_model_serializers]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.3ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."project_id" = $1[0m  [["project_id", 1]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.3ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."project_id" = $1[0m  [["project_id", 2]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (9.78ms)
+Completed 200 OK in 14ms (Views: 10.4ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/api/projects" for 127.0.0.1 at 2017-07-21 17:14:44 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mProject Load (0.7ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+[active_model_serializers]   [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.7ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."project_id" = $1[0m  [["project_id", 1]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.5ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."project_id" = $1[0m  [["project_id", 2]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (15.03ms)
+Completed 200 OK in 20ms (Views: 13.5ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/api/projects" for 127.0.0.1 at 2017-07-21 17:14:58 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+[active_model_serializers]   [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.4ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."project_id" = $1[0m  [["project_id", 1]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.3ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."project_id" = $1[0m  [["project_id", 2]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (13.92ms)
+Completed 200 OK in 18ms (Views: 13.6ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/api/projects" for 127.0.0.1 at 2017-07-21 17:15:01 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+[active_model_serializers]   [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.5ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."project_id" = $1[0m  [["project_id", 1]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.7ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."project_id" = $1[0m  [["project_id", 2]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (12.47ms)
+Completed 200 OK in 16ms (Views: 12.0ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/api/projects" for 127.0.0.1 at 2017-07-21 17:16:54 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mProject Load (0.6ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+[active_model_serializers]   [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.5ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."project_id" = $1[0m  [["project_id", 1]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.3ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."project_id" = $1[0m  [["project_id", 2]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (15.76ms)
+Completed 200 OK in 21ms (Views: 16.2ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/api/projects" for 127.0.0.1 at 2017-07-21 17:17:06 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mProject Load (0.9ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+[active_model_serializers]   [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.6ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."project_id" = $1[0m  [["project_id", 1]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.4ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."project_id" = $1[0m  [["project_id", 2]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (19.21ms)
+Completed 200 OK in 26ms (Views: 20.6ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/api/projects/1" for 127.0.0.1 at 2017-07-21 17:17:17 +0100
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.3ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."project_id" = $1[0m  [["project_id", 1]]
+[active_model_serializers] Rendered ProjectSerializer with ActiveModelSerializers::Adapter::Attributes (10.65ms)
+Completed 200 OK in 14ms (Views: 10.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/api/projects/1" for 127.0.0.1 at 2017-07-21 17:17:28 +0100
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mProject Load (0.7ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.3ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."project_id" = $1[0m  [["project_id", 1]]
+[active_model_serializers] Rendered ProjectSerializer with ActiveModelSerializers::Adapter::Attributes (5.21ms)
+Completed 200 OK in 10ms (Views: 5.2ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/api/projects/1" for 127.0.0.1 at 2017-07-21 17:17:34 +0100
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.6ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."project_id" = $1[0m  [["project_id", 1]]
+[active_model_serializers] Rendered ProjectSerializer with ActiveModelSerializers::Adapter::Attributes (4.72ms)
+Completed 200 OK in 8ms (Views: 4.3ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/api/projects/1" for 127.0.0.1 at 2017-07-21 17:18:50 +0100
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.3ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."project_id" = $1[0m  [["project_id", 1]]
+[active_model_serializers] Rendered ProjectSerializer with ActiveModelSerializers::Adapter::Attributes (6.47ms)
+Completed 200 OK in 11ms (Views: 7.0ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/api/login" for 127.0.0.1 at 2017-07-21 17:19:05 +0100
+Processing by AuthenticationsController#login as HTML
+  Parameters: {"email"=>"simon@simon.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"simon@simon.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "simon@simon.com"], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   [1m[36mTender Load (0.2ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   [1m[36mConversation Load (0.2ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."sender_id" = $1[0m  [["sender_id", 5]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (7.79ms)
+Completed 200 OK in 88ms (Views: 12.0ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/api/projects" for 127.0.0.1 at 2017-07-21 17:19:05 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+[active_model_serializers]   [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.4ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."project_id" = $1[0m  [["project_id", 1]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTender Load (3.0ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."project_id" = $1[0m  [["project_id", 2]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (21.19ms)
+Completed 200 OK in 27ms (Views: 18.9ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/api/projects" for 127.0.0.1 at 2017-07-21 17:19:34 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mProject Load (15.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+[active_model_serializers]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.4ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."project_id" = $1[0m  [["project_id", 1]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.5ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."project_id" = $1[0m  [["project_id", 2]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (18.56ms)
+Completed 200 OK in 40ms (Views: 19.4ms | ActiveRecord: 17.2ms)
+
+
+Started GET "/api/projects" for 127.0.0.1 at 2017-07-21 17:19:59 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+[active_model_serializers]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.4ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."project_id" = $1[0m  [["project_id", 1]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.4ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."project_id" = $1[0m  [["project_id", 2]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (12.12ms)
+Completed 200 OK in 17ms (Views: 12.6ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/api/projects" for 127.0.0.1 at 2017-07-21 17:20:29 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+[active_model_serializers]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.3ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."project_id" = $1[0m  [["project_id", 1]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.4ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."project_id" = $1[0m  [["project_id", 2]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (11.38ms)
+Completed 200 OK in 16ms (Views: 11.8ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/api/projects" for 127.0.0.1 at 2017-07-21 17:20:32 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mProject Load (0.6ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+[active_model_serializers]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.3ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."project_id" = $1[0m  [["project_id", 1]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.3ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."project_id" = $1[0m  [["project_id", 2]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (10.07ms)
+Completed 200 OK in 15ms (Views: 11.0ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/api/projects" for 127.0.0.1 at 2017-07-21 17:20:34 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+[active_model_serializers]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.2ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."project_id" = $1[0m  [["project_id", 1]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.3ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."project_id" = $1[0m  [["project_id", 2]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (10.25ms)
+Completed 200 OK in 13ms (Views: 10.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/api/projects" for 127.0.0.1 at 2017-07-21 17:20:45 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.3ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."project_id" = $1[0m  [["project_id", 1]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.3ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."project_id" = $1[0m  [["project_id", 2]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (9.55ms)
+Completed 200 OK in 13ms (Views: 9.9ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/api/projects" for 127.0.0.1 at 2017-07-21 17:20:48 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mProject Load (0.7ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+[active_model_serializers]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.4ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."project_id" = $1[0m  [["project_id", 1]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.2ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."project_id" = $1[0m  [["project_id", 2]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (8.53ms)
+Completed 200 OK in 13ms (Views: 9.1ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/api/users/5" for 127.0.0.1 at 2017-07-21 17:20:51 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   [1m[36mTender Load (0.8ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   [1m[36mConversation Load (0.3ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."sender_id" = $1[0m  [["sender_id", 5]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (11.31ms)
+Completed 200 OK in 14ms (Views: 10.0ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/api/users/5" for 127.0.0.1 at 2017-07-21 17:21:13 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   [1m[36mTender Load (0.3ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   [1m[36mConversation Load (0.3ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."sender_id" = $1[0m  [["sender_id", 5]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (8.66ms)
+Completed 200 OK in 13ms (Views: 8.2ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/api/users/5" for 127.0.0.1 at 2017-07-21 17:21:16 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mProject Load (3.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   [1m[36mTender Load (0.4ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   [1m[36mConversation Load (0.3ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."sender_id" = $1[0m  [["sender_id", 5]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (16.63ms)
+Completed 200 OK in 21ms (Views: 12.7ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/api/users/5" for 127.0.0.1 at 2017-07-21 17:21:34 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   [1m[36mTender Load (0.6ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   [1m[36mConversation Load (0.2ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."sender_id" = $1[0m  [["sender_id", 5]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (11.2ms)
+Completed 200 OK in 15ms (Views: 10.3ms | ActiveRecord: 2.2ms)
+
+
