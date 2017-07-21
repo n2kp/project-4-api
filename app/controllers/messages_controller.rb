@@ -11,12 +11,13 @@ class MessagesController < ApplicationController
     if @messages.last && @messages.last.user_id != current_user.id
       @messages.last.update(read: true)
     end
-    render json: @conversation.messages
+    render json: @conversation
     @message = @conversation.messages.new
 
   end
 
   def create
+
     @message = @conversation.messages.new(message_params)
 
     if @message.save

@@ -3315,3 +3315,829 @@ Processing by UsersController#index as */*
 Completed 200 OK in 230ms (Views: 184.9ms | ActiveRecord: 14.6ms)
 
 
+Started GET "/api/users" for 127.0.0.1 at 2017-07-21 14:38:57 +0100
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as */*
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+[active_model_serializers]   [1m[36mProject Load (0.7ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.6ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mConversation Load (0.4ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."sender_id" = $1[0m  [["sender_id", 1]]
+[active_model_serializers]   [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mReview Load (0.8ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mTender Load (0.6ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mConversation Load (0.5ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."sender_id" = $1[0m  [["sender_id", 2]]
+[active_model_serializers]   [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   [1m[36mTender Load (0.3ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   [1m[36mConversation Load (0.2ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."sender_id" = $1[0m  [["sender_id", 3]]
+[active_model_serializers]   [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 4]]
+[active_model_serializers]   [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 4]]
+[active_model_serializers]   [1m[36mTender Load (0.3ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 4]]
+[active_model_serializers]   [1m[36mConversation Load (0.2ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."sender_id" = $1[0m  [["sender_id", 4]]
+[active_model_serializers] No serializer found for resource: #<Conversation id: 1, sender_id: 4, receiver_id: 3, created_at: "2017-07-21 12:36:29", updated_at: "2017-07-21 12:36:29">
+[active_model_serializers]   [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   [1m[36mTender Load (0.3ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   [1m[36mConversation Load (0.2ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."sender_id" = $1[0m  [["sender_id", 5]]
+[active_model_serializers]   [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 6]]
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 6]]
+[active_model_serializers]   [1m[36mTender Load (0.3ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 6]]
+[active_model_serializers]   [1m[36mConversation Load (0.2ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."sender_id" = $1[0m  [["sender_id", 6]]
+[active_model_serializers]   [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 7]]
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 7]]
+[active_model_serializers]   [1m[36mTender Load (0.2ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 7]]
+[active_model_serializers]   [1m[36mConversation Load (0.2ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."sender_id" = $1[0m  [["sender_id", 7]]
+[active_model_serializers]   [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 8]]
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 8]]
+[active_model_serializers]   [1m[36mTender Load (0.2ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 8]]
+[active_model_serializers]   [1m[36mConversation Load (0.2ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."sender_id" = $1[0m  [["sender_id", 8]]
+[active_model_serializers] No serializer found for resource: #<Conversation id: 1, sender_id: 4, receiver_id: 3, created_at: "2017-07-21 12:36:29", updated_at: "2017-07-21 12:36:29">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (183.94ms)
+Completed 200 OK in 267ms (Views: 185.9ms | ActiveRecord: 33.8ms)
+
+
+Started GET "/api/users/1" for 127.0.0.1 at 2017-07-21 14:39:59 +0100
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mProject Load (0.7ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.7ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mConversation Load (0.6ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."sender_id" = $1[0m  [["sender_id", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (8.26ms)
+Completed 200 OK in 29ms (Views: 6.1ms | ActiveRecord: 11.5ms)
+
+
+Started GET "/api/users/3" for 127.0.0.1 at 2017-07-21 14:40:05 +0100
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   [1m[36mTender Load (0.4ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   [1m[36mConversation Load (0.7ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."sender_id" = $1[0m  [["sender_id", 3]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (9.49ms)
+Completed 200 OK in 12ms (Views: 7.9ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/api/users/4" for 127.0.0.1 at 2017-07-21 14:40:09 +0100
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 4]]
+[active_model_serializers]   [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 4]]
+[active_model_serializers]   [1m[36mTender Load (0.4ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 4]]
+[active_model_serializers]   [1m[36mConversation Load (0.3ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."sender_id" = $1[0m  [["sender_id", 4]]
+[active_model_serializers] No serializer found for resource: #<Conversation id: 1, sender_id: 4, receiver_id: 3, created_at: "2017-07-21 12:36:29", updated_at: "2017-07-21 12:36:29">
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (7.07ms)
+Completed 200 OK in 10ms (Views: 6.0ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/api/users/4" for 127.0.0.1 at 2017-07-21 14:40:42 +0100
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mConversation Load (0.5ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."sender_id" = $1[0m  [["sender_id", 4]]
+[active_model_serializers] No serializer found for resource: #<Conversation id: 1, sender_id: 4, receiver_id: 3, created_at: "2017-07-21 12:36:29", updated_at: "2017-07-21 12:36:29">
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (29.56ms)
+Completed 200 OK in 65ms (Views: 26.8ms | ActiveRecord: 12.4ms)
+
+
+Started GET "/api/conversations/1/messages" for 127.0.0.1 at 2017-07-21 14:40:54 +0100
+Processing by MessagesController#index as */*
+  Parameters: {"conversation_id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mConversation Load (0.2ms)[0m  [1m[34mSELECT  "conversations".* FROM "conversations" WHERE "conversations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.7ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" WHERE "messages"."conversation_id" = $1 ORDER BY "messages"."id" DESC LIMIT $2[0m  [["conversation_id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Message Load (0.0ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" WHERE "messages"."conversation_id" = $1 ORDER BY "messages"."id" DESC LIMIT $2[0m  [["conversation_id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Message Load (0.0ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" WHERE "messages"."conversation_id" = $1 ORDER BY "messages"."id" DESC LIMIT $2[0m  [["conversation_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mMessage Load (0.5ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."conversation_id" = $1[0m  [["conversation_id", 1]]
+No serializer found for resource: #<Message id: 1, body: "This is a test message", conversation_id: 1, user_id: 3, read: false, created_at: "2017-07-21 12:39:52", updated_at: "2017-07-21 12:39:52">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Message::ActiveRecord_Associations_CollectionProxy (1.09ms)
+Completed 200 OK in 45ms (Views: 10.9ms | ActiveRecord: 11.3ms)
+
+
+Started GET "/api/conversations/1" for 127.0.0.1 at 2017-07-21 14:41:01 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/api/conversations/1"):
+  
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.0) lib/rack/cors.rb:93:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/api/conversations/1/messages" for 127.0.0.1 at 2017-07-21 14:41:12 +0100
+Processing by MessagesController#index as */*
+  Parameters: {"conversation_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mConversation Load (0.2ms)[0m  [1m[34mSELECT  "conversations".* FROM "conversations" WHERE "conversations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMessage Load (1.1ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" WHERE "messages"."conversation_id" = $1 ORDER BY "messages"."id" DESC LIMIT $2[0m  [["conversation_id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Message Load (0.0ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" WHERE "messages"."conversation_id" = $1 ORDER BY "messages"."id" DESC LIMIT $2[0m  [["conversation_id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Message Load (0.0ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" WHERE "messages"."conversation_id" = $1 ORDER BY "messages"."id" DESC LIMIT $2[0m  [["conversation_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."conversation_id" = $1[0m  [["conversation_id", 1]]
+No serializer found for resource: #<Message id: 1, body: "This is a test message", conversation_id: 1, user_id: 3, read: false, created_at: "2017-07-21 12:39:52", updated_at: "2017-07-21 12:39:52">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Message::ActiveRecord_Associations_CollectionProxy (0.99ms)
+Completed 200 OK in 13ms (Views: 3.2ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/api/conversations/1/messages" for 127.0.0.1 at 2017-07-21 14:46:01 +0100
+Processing by MessagesController#index as */*
+  Parameters: {"conversation_id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mConversation Load (0.5ms)[0m  [1m[34mSELECT  "conversations".* FROM "conversations" WHERE "conversations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMessage Load (2.3ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" WHERE "messages"."conversation_id" = $1 ORDER BY "messages"."id" DESC LIMIT $2[0m  [["conversation_id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Message Load (0.0ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" WHERE "messages"."conversation_id" = $1 ORDER BY "messages"."id" DESC LIMIT $2[0m  [["conversation_id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Message Load (0.1ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" WHERE "messages"."conversation_id" = $1 ORDER BY "messages"."id" DESC LIMIT $2[0m  [["conversation_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mMessage Load (0.5ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."conversation_id" = $1[0m  [["conversation_id", 1]]
+No serializer found for resource: #<Message id: 1, body: "This is a test message", conversation_id: 1, user_id: 3, read: false, created_at: "2017-07-21 12:39:52", updated_at: "2017-07-21 12:39:52">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Message::ActiveRecord_Associations_CollectionProxy (3.85ms)
+Completed 200 OK in 125ms (Views: 25.4ms | ActiveRecord: 12.8ms)
+
+
+Started GET "/api/users/4" for 127.0.0.1 at 2017-07-21 14:46:10 +0100
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mConversation Load (0.3ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."sender_id" = $1[0m  [["sender_id", 4]]
+[active_model_serializers]   [1m[36mMessage Load (0.5ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."conversation_id" = $1[0m  [["conversation_id", 1]]
+[active_model_serializers] No serializer found for resource: #<Message id: 1, body: "This is a test message", conversation_id: 1, user_id: 3, read: false, created_at: "2017-07-21 12:39:52", updated_at: "2017-07-21 12:39:52">
+[active_model_serializers] No serializer found for resource: #<Message id: 1, body: "This is a test message", conversation_id: 1, user_id: 3, read: false, created_at: "2017-07-21 12:39:52", updated_at: "2017-07-21 12:39:52">
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (27.44ms)
+Completed 200 OK in 34ms (Views: 29.6ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/api/users/4" for 127.0.0.1 at 2017-07-21 14:46:48 +0100
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mConversation Load (0.5ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."sender_id" = $1[0m  [["sender_id", 4]]
+[active_model_serializers]   [1m[36mMessage Load (0.6ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."conversation_id" = $1[0m  [["conversation_id", 1]]
+[active_model_serializers] No serializer found for resource: #<Message id: 1, body: "This is a test message", conversation_id: 1, user_id: 3, read: false, created_at: "2017-07-21 12:39:52", updated_at: "2017-07-21 12:39:52">
+[active_model_serializers]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers] No serializer found for resource: #<Message id: 1, body: "This is a test message", conversation_id: 1, user_id: 3, read: false, created_at: "2017-07-21 12:39:52", updated_at: "2017-07-21 12:39:52">
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (122.8ms)
+Completed 200 OK in 258ms (Views: 115.4ms | ActiveRecord: 41.1ms)
+
+
+Started GET "/api/users/4" for 127.0.0.1 at 2017-07-21 14:47:52 +0100
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mConversation Load (1.0ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."sender_id" = $1[0m  [["sender_id", 4]]
+[active_model_serializers]   [1m[36mMessage Load (0.6ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."conversation_id" = $1[0m  [["conversation_id", 1]]
+[active_model_serializers] No serializer found for resource: #<Message id: 1, body: "This is a test message", conversation_id: 1, user_id: 3, read: false, created_at: "2017-07-21 12:39:52", updated_at: "2017-07-21 12:39:52">
+[active_model_serializers]   [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers] No serializer found for resource: #<Message id: 1, body: "This is a test message", conversation_id: 1, user_id: 3, read: false, created_at: "2017-07-21 12:39:52", updated_at: "2017-07-21 12:39:52">
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (78.63ms)
+Completed 200 OK in 113ms (Views: 80.0ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/api/users/4" for 127.0.0.1 at 2017-07-21 14:52:22 +0100
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mConversation Load (0.6ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."sender_id" = $1[0m  [["sender_id", 4]]
+[active_model_serializers]   [1m[36mMessage Load (0.9ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."conversation_id" = $1[0m  [["conversation_id", 1]]
+[active_model_serializers]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (81.8ms)
+Completed 200 OK in 111ms (Views: 82.0ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/api/users/4" for 127.0.0.1 at 2017-07-21 14:52:43 +0100
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mConversation Load (0.4ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."sender_id" = $1[0m  [["sender_id", 4]]
+[active_model_serializers]   [1m[36mMessage Load (0.8ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."conversation_id" = $1[0m  [["conversation_id", 1]]
+[active_model_serializers]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (103.62ms)
+Completed 200 OK in 154ms (Views: 103.7ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/api/conversations" for 127.0.0.1 at 2017-07-21 15:03:47 +0100
+Processing by ConversationsController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mConversation Load (0.6ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE (sender_id = 8 OR receiver_id = 8)[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.1ms)
+Completed 200 OK in 30ms (Views: 1.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/conversations" for 127.0.0.1 at 2017-07-21 15:05:36 +0100
+Processing by ConversationsController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mConversation Load (0.5ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE (sender_id = 8 OR receiver_id = 8)[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.12ms)
+Completed 200 OK in 34ms (Views: 1.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/conversations" for 127.0.0.1 at 2017-07-21 15:05:37 +0100
+Processing by ConversationsController#index as */*
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mConversation Load (0.5ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE (sender_id = 8 OR receiver_id = 8)[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.08ms)
+Completed 200 OK in 4ms (Views: 0.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/api/conversations/1" for 127.0.0.1 at 2017-07-21 15:05:45 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/api/conversations/1"):
+  
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.0) lib/rack/cors.rb:93:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/api/conversations" for 127.0.0.1 at 2017-07-21 15:05:49 +0100
+Processing by ConversationsController#index as */*
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mConversation Load (0.4ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE (sender_id = 8 OR receiver_id = 8)[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.14ms)
+Completed 200 OK in 4ms (Views: 1.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/conversations" for 127.0.0.1 at 2017-07-21 15:07:13 +0100
+Processing by ConversationsController#index as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mConversation Load (0.4ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE (sender_id = 8 OR receiver_id = 8)[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.14ms)
+Completed 200 OK in 4ms (Views: 1.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/conversations" for 127.0.0.1 at 2017-07-21 15:07:46 +0100
+Processing by ConversationsController#index as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mConversation Load (0.3ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE (sender_id = 8 OR receiver_id = 8)[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.09ms)
+Completed 200 OK in 3ms (Views: 1.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/conversations" for 127.0.0.1 at 2017-07-21 15:07:47 +0100
+Processing by ConversationsController#index as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mConversation Load (0.3ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE (sender_id = 8 OR receiver_id = 8)[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.12ms)
+Completed 200 OK in 3ms (Views: 0.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/conversations" for 127.0.0.1 at 2017-07-21 15:07:48 +0100
+Processing by ConversationsController#index as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mConversation Load (0.4ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE (sender_id = 8 OR receiver_id = 8)[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.08ms)
+Completed 200 OK in 3ms (Views: 0.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/conversations" for 127.0.0.1 at 2017-07-21 15:08:11 +0100
+Processing by ConversationsController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.12ms)
+Completed 200 OK in 41ms (Views: 14.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/conversations" for 127.0.0.1 at 2017-07-21 15:08:26 +0100
+Processing by ConversationsController#index as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mConversation Load (1.4ms)[0m  [1m[34mSELECT  "conversations".* FROM "conversations" WHERE (sender_id = 8 OR receiver_id = 8) LIMIT $1[0m  [["LIMIT", 11]]
+Completed 500 Internal Server Error in 44ms (ActiveRecord: 0.4ms)
+
+
+  
+  [1m[36mCACHE Conversation Load (0.1ms)[0m  [1m[34mSELECT  "conversations".* FROM "conversations" WHERE (sender_id = 8 OR receiver_id = 8) LIMIT $1[0m  [["LIMIT", 11]]
+NoMethodError (undefined method `messages' for #<ActiveRecord::Relation []>):
+  
+app/controllers/conversations_controller.rb:7:in `index'
+  [1m[36mCACHE Conversation Load (0.0ms)[0m  [1m[34mSELECT  "conversations".* FROM "conversations" WHERE (sender_id = 8 OR receiver_id = 8) LIMIT $1[0m  [["LIMIT", 11]]
+Started GET "/api/conversations" for 127.0.0.1 at 2017-07-21 15:08:43 +0100
+Processing by ConversationsController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE ("users"."id" != $1) LIMIT $2[0m  [["id", 8], ["LIMIT", 11]]
+Completed 500 Internal Server Error in 52ms (ActiveRecord: 0.3ms)
+
+
+  
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE ("users"."id" != $1) LIMIT $2[0m  [["id", 8], ["LIMIT", 11]]
+NoMethodError (undefined method `conversations' for #<User::ActiveRecord_Relation:0x007fc195eab790>
+Did you mean?  connection):
+  
+app/controllers/conversations_controller.rb:7:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE ("users"."id" != $1) LIMIT $2[0m  [["id", 8], ["LIMIT", 11]]
+Started GET "/api/conversations" for 127.0.0.1 at 2017-07-21 15:09:20 +0100
+Processing by ConversationsController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != $1)[0m  [["id", 8]]
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 0.8ms)
+
+
+  
+TypeError (no implicit conversion of Conversation::ActiveRecord_Relation into Integer):
+  
+app/controllers/conversations_controller.rb:7:in `index'
+Started GET "/api/conversations" for 127.0.0.1 at 2017-07-21 15:09:33 +0100
+Processing by ConversationsController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != $1)[0m  [["id", 8]]
+[active_model_serializers]   [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mReview Load (1.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.4ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mConversation Load (0.2ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."sender_id" = $1[0m  [["sender_id", 1]]
+[active_model_serializers]   [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mTender Load (0.7ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mConversation Load (0.6ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."sender_id" = $1[0m  [["sender_id", 2]]
+[active_model_serializers]   [1m[36mProject Load (0.9ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   [1m[36mTender Load (0.7ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   [1m[36mConversation Load (0.7ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."sender_id" = $1[0m  [["sender_id", 3]]
+[active_model_serializers]   [1m[36mProject Load (0.7ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 4]]
+[active_model_serializers]   [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 4]]
+[active_model_serializers]   [1m[36mTender Load (0.3ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 4]]
+[active_model_serializers]   [1m[36mConversation Load (0.8ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."sender_id" = $1[0m  [["sender_id", 4]]
+[active_model_serializers]   [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   [1m[36mTender Load (0.2ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   [1m[36mConversation Load (0.2ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."sender_id" = $1[0m  [["sender_id", 5]]
+[active_model_serializers]   [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 6]]
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 6]]
+[active_model_serializers]   [1m[36mTender Load (0.2ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 6]]
+[active_model_serializers]   [1m[36mConversation Load (0.2ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."sender_id" = $1[0m  [["sender_id", 6]]
+[active_model_serializers]   [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 7]]
+[active_model_serializers]   [1m[36mReview Load (0.8ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 7]]
+[active_model_serializers]   [1m[36mTender Load (1.0ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 7]]
+[active_model_serializers]   [1m[36mConversation Load (0.3ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."sender_id" = $1[0m  [["sender_id", 7]]
+[active_model_serializers]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."conversation_id" = $1[0m  [["conversation_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (202.24ms)
+Completed 200 OK in 251ms (Views: 177.2ms | ActiveRecord: 31.4ms)
+
+
+Started GET "/api/conversations" for 127.0.0.1 at 2017-07-21 15:10:17 +0100
+Processing by ConversationsController#index as */*
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE ("users"."id" != $1) LIMIT $2[0m  [["id", 8], ["LIMIT", 11]]
+Completed 500 Internal Server Error in 93ms (ActiveRecord: 0.6ms)
+
+
+  
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE ("users"."id" != $1) LIMIT $2[0m  [["id", 8], ["LIMIT", 11]]
+NoMethodError (undefined method `conversations' for #<User::ActiveRecord_Relation:0x007fc196178978>
+Did you mean?  connection):
+  
+app/controllers/conversations_controller.rb:7:in `index'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE ("users"."id" != $1) LIMIT $2[0m  [["id", 8], ["LIMIT", 11]]
+Started GET "/api/conversations" for 127.0.0.1 at 2017-07-21 15:10:33 +0100
+Processing by ConversationsController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE ("users"."id" != $1)[0m  [["id", 8]]
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 0.9ms)
+
+
+  
+TypeError (no implicit conversion of String into Integer):
+  
+app/controllers/conversations_controller.rb:7:in `index'
+Started GET "/api/conversations" for 127.0.0.1 at 2017-07-21 15:10:51 +0100
+Processing by ConversationsController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE ("users"."id" != $1) LIMIT $2[0m  [["id", 8], ["LIMIT", 11]]
+  [1m[36mConversation Load (0.6ms)[0m  [1m[34mSELECT  "conversations".* FROM "conversations" WHERE (sender_id = 8 OR receiver_id = 8) LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE ("users"."id" != $1) LIMIT $2[0m  [["id", 8], ["LIMIT", 11]]
+  [1m[36mCACHE Conversation Load (0.1ms)[0m  [1m[34mSELECT  "conversations".* FROM "conversations" WHERE (sender_id = 8 OR receiver_id = 8) LIMIT $1[0m  [["LIMIT", 11]]
+Completed 500 Internal Server Error in 211ms (ActiveRecord: 0.2ms)
+
+
+  
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE ("users"."id" != $1) LIMIT $2[0m  [["id", 8], ["LIMIT", 11]]
+  [1m[36mCACHE Conversation Load (0.0ms)[0m  [1m[34mSELECT  "conversations".* FROM "conversations" WHERE (sender_id = 8 OR receiver_id = 8) LIMIT $1[0m  [["LIMIT", 11]]
+NameError (undefined local variable or method `conversations' for #<ConversationsController:0x007fc1994198a0>
+Did you mean?  @conversations
+               conversations_url):
+  
+app/controllers/conversations_controller.rb:7:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE ("users"."id" != $1) LIMIT $2[0m  [["id", 8], ["LIMIT", 11]]
+  [1m[36mCACHE Conversation Load (0.0ms)[0m  [1m[34mSELECT  "conversations".* FROM "conversations" WHERE (sender_id = 8 OR receiver_id = 8) LIMIT $1[0m  [["LIMIT", 11]]
+Started GET "/api/users" for 127.0.0.1 at 2017-07-21 15:12:34 +0100
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+[active_model_serializers]   [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.3ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mConversation Load (0.3ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."sender_id" = $1[0m  [["sender_id", 1]]
+[active_model_serializers]   [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mTender Load (0.2ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mConversation Load (0.1ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."sender_id" = $1[0m  [["sender_id", 2]]
+[active_model_serializers]   [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   [1m[36mTender Load (0.2ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   [1m[36mConversation Load (0.2ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."sender_id" = $1[0m  [["sender_id", 3]]
+[active_model_serializers]   [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 4]]
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 4]]
+[active_model_serializers]   [1m[36mTender Load (0.2ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 4]]
+[active_model_serializers]   [1m[36mConversation Load (0.2ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."sender_id" = $1[0m  [["sender_id", 4]]
+[active_model_serializers]   [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   [1m[36mTender Load (0.4ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   [1m[36mConversation Load (0.3ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."sender_id" = $1[0m  [["sender_id", 5]]
+[active_model_serializers]   [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 6]]
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 6]]
+[active_model_serializers]   [1m[36mTender Load (0.2ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 6]]
+[active_model_serializers]   [1m[36mConversation Load (0.1ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."sender_id" = $1[0m  [["sender_id", 6]]
+[active_model_serializers]   [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 7]]
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 7]]
+[active_model_serializers]   [1m[36mTender Load (0.2ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 7]]
+[active_model_serializers]   [1m[36mConversation Load (0.2ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."sender_id" = $1[0m  [["sender_id", 7]]
+[active_model_serializers]   [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 8]]
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 8]]
+[active_model_serializers]   [1m[36mTender Load (0.3ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 8]]
+[active_model_serializers]   [1m[36mConversation Load (0.2ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."sender_id" = $1[0m  [["sender_id", 8]]
+[active_model_serializers]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."conversation_id" = $1[0m  [["conversation_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (146.57ms)
+Completed 200 OK in 183ms (Views: 142.1ms | ActiveRecord: 9.2ms)
+
+
+Started GET "/api/users/1" for 127.0.0.1 at 2017-07-21 15:12:40 +0100
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mConversation Load (0.5ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."sender_id" = $1[0m  [["sender_id", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (2.08ms)
+Completed 200 OK in 5ms (Views: 2.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/api/users/2" for 127.0.0.1 at 2017-07-21 15:12:43 +0100
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mConversation Load (0.2ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."sender_id" = $1[0m  [["sender_id", 2]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (1.9ms)
+Completed 200 OK in 4ms (Views: 2.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/users/4" for 127.0.0.1 at 2017-07-21 15:12:45 +0100
+Processing by UsersController#show as */*
+Started GET "/api/users/4" for 127.0.0.1 at 2017-07-21 15:12:45 +0100
+  Parameters: {"id"=>"4"}
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mConversation Load (0.2ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."sender_id" = $1[0m  [["sender_id", 4]]
+[active_model_serializers]   [1m[36mConversation Load (1.4ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."sender_id" = $1[0m  [["sender_id", 4]]
+[active_model_serializers]   [1m[36mMessage Load (1.4ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."conversation_id" = $1[0m  [["conversation_id", 1]]
+[active_model_serializers]   [1m[36mMessage Load (4.4ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."conversation_id" = $1[0m  [["conversation_id", 1]]
+[active_model_serializers]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (5.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (29.02ms)
+[active_model_serializers]   [1m[36mUser Load (3.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+Completed 200 OK in 34ms (Views: 25.7ms | ActiveRecord: 5.0ms)
+
+
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (32.89ms)
+Completed 200 OK in 40ms (Views: 16.8ms | ActiveRecord: 19.6ms)
+
+
+Started GET "/api/conversations" for 127.0.0.1 at 2017-07-21 15:15:46 +0100
+Processing by ConversationsController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mConversation Load (0.5ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE (sender_id = 8 OR receiver_id = 8)[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.08ms)
+Completed 200 OK in 45ms (Views: 1.5ms | ActiveRecord: 8.8ms)
+
+
+Started GET "/api/users/4" for 127.0.0.1 at 2017-07-21 15:15:49 +0100
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mConversation Load (0.4ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."sender_id" = $1[0m  [["sender_id", 4]]
+[active_model_serializers]   [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."conversation_id" = $1[0m  [["conversation_id", 1]]
+[active_model_serializers]   [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (55.87ms)
+Completed 200 OK in 61ms (Views: 46.7ms | ActiveRecord: 11.9ms)
+
+
+Started GET "/api/conversations/1" for 127.0.0.1 at 2017-07-21 15:15:56 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/api/conversations/1"):
+  
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.0) lib/rack/cors.rb:93:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/api/conversations" for 127.0.0.1 at 2017-07-21 15:15:59 +0100
+Processing by ConversationsController#index as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mConversation Load (0.3ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE (sender_id = 8 OR receiver_id = 8)[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.06ms)
+Completed 200 OK in 4ms (Views: 0.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/conversations" for 127.0.0.1 at 2017-07-21 15:16:18 +0100
+Processing by ConversationsController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.12ms)
+Completed 200 OK in 57ms (Views: 10.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/conversations" for 127.0.0.1 at 2017-07-21 15:16:41 +0100
+Processing by ConversationsController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mConversation Load (0.6ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE (sender_id = 8 OR receiver_id = 8)[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.11ms)
+Completed 200 OK in 49ms (Views: 1.9ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/api/conversations" for 127.0.0.1 at 2017-07-21 15:17:22 +0100
+Processing by ConversationsController#create as */*
+  Parameters: {"sender_id"=>8, "receiver_id"=>3, "conversation"=>{"sender_id"=>8, "receiver_id"=>3}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mConversation Load (0.4ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE ((conversations.sender_id = 8 AND conversations.receiver_id = 3) OR (conversations.receiver_id = 3 AND conversations.sender_id = 8))[0m
+Unpermitted parameter: :conversation
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mConversation Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "conversations" WHERE "conversations"."sender_id" = $1 AND "conversations"."receiver_id" = $2 LIMIT $3[0m  [["sender_id", 8], ["receiver_id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "conversations" ("sender_id", "receiver_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["sender_id", 8], ["receiver_id", 3], ["created_at", "2017-07-21 14:17:22.059609"], ["updated_at", "2017-07-21 14:17:22.059609"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers]   [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."conversation_id" = $1[0m  [["conversation_id", 2]]
+[active_model_serializers] Rendered ConversationSerializer with ActiveModelSerializers::Adapter::Attributes (12.55ms)
+Completed 200 OK in 40ms (Views: 12.6ms | ActiveRecord: 9.7ms)
+
+
+Started GET "/api/conversations" for 127.0.0.1 at 2017-07-21 15:17:37 +0100
+Processing by ConversationsController#index as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mConversation Load (0.6ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE (sender_id = 8 OR receiver_id = 8)[0m
+[active_model_serializers]   [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."conversation_id" = $1[0m  [["conversation_id", 2]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (5.48ms)
+Completed 200 OK in 11ms (Views: 6.2ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/api/conversations" for 127.0.0.1 at 2017-07-21 15:17:37 +0100
+Processing by ConversationsController#index as */*
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mConversation Load (1.1ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE (sender_id = 8 OR receiver_id = 8)[0m
+[active_model_serializers]   [1m[36mMessage Load (1.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."conversation_id" = $1[0m  [["conversation_id", 2]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (9.18ms)
+Completed 200 OK in 17ms (Views: 10.1ms | ActiveRecord: 3.8ms)
+
+
+Started POST "/api/conversations/1/messages" for 127.0.0.1 at 2017-07-21 15:18:06 +0100
+Processing by MessagesController#create as */*
+  Parameters: {"body"=>"This is a test reply", "user_id"=>8, "conversation_id"=>"1", "message"=>{"body"=>"This is a test reply", "conversation_id"=>"1", "user_id"=>8}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mConversation Load (0.3ms)[0m  [1m[34mSELECT  "conversations".* FROM "conversations" WHERE "conversations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Unpermitted parameter: :conversation_id
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35mSQL (1.6ms)[0m  [1m[32mINSERT INTO "messages" ("body", "conversation_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["body", "This is a test reply"], ["conversation_id", 1], ["user_id", 8], ["created_at", "2017-07-21 14:18:06.171534"], ["updated_at", "2017-07-21 14:18:06.171534"]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."conversation_id" = $1[0m  [["conversation_id", 1]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers] Rendered ConversationSerializer with ActiveModelSerializers::Adapter::Attributes (19.45ms)
+Completed 200 OK in 42ms (Views: 18.9ms | ActiveRecord: 7.9ms)
+
+
+Started POST "/api/conversations/1/messages" for 127.0.0.1 at 2017-07-21 15:18:49 +0100
+Processing by MessagesController#create as */*
+  Parameters: {"body"=>"Trying with logged in user", "user_id"=>8, "conversation_id"=>"1", "message"=>{"body"=>"Trying with logged in user", "conversation_id"=>"1", "user_id"=>8}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mConversation Load (0.4ms)[0m  [1m[34mSELECT  "conversations".* FROM "conversations" WHERE "conversations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Unpermitted parameter: :conversation_id
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "messages" ("body", "conversation_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["body", "Trying with logged in user"], ["conversation_id", 1], ["user_id", 8], ["created_at", "2017-07-21 14:18:49.891266"], ["updated_at", "2017-07-21 14:18:49.891266"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."conversation_id" = $1[0m  [["conversation_id", 1]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers] Rendered ConversationSerializer with ActiveModelSerializers::Adapter::Attributes (32.54ms)
+Completed 200 OK in 91ms (Views: 33.2ms | ActiveRecord: 8.9ms)
+
+
+Started GET "/api/conversations/2/messages" for 127.0.0.1 at 2017-07-21 15:19:33 +0100
+Processing by MessagesController#index as */*
+  Parameters: {"conversation_id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mConversation Load (0.4ms)[0m  [1m[34mSELECT  "conversations".* FROM "conversations" WHERE "conversations"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.5ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" WHERE "messages"."conversation_id" = $1 ORDER BY "messages"."id" DESC LIMIT $2[0m  [["conversation_id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."conversation_id" = $1[0m  [["conversation_id", 2]]
+[active_model_serializers] Rendered ConversationSerializer with ActiveModelSerializers::Adapter::Attributes (3.87ms)
+Completed 200 OK in 11ms (Views: 3.8ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/api/users/8" for 127.0.0.1 at 2017-07-21 15:20:04 +0100
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mConversation Load (0.3ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."sender_id" = $1[0m  [["sender_id", 8]]
+[active_model_serializers]   [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."conversation_id" = $1[0m  [["conversation_id", 2]]
+[active_model_serializers]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (9.92ms)
+Completed 200 OK in 13ms (Views: 9.5ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/api/conversations/1/messages" for 127.0.0.1 at 2017-07-21 15:20:39 +0100
+Processing by MessagesController#create as */*
+  Parameters: {"body"=>"Trying with logged in user", "user_id"=>3, "conversation_id"=>"1", "message"=>{"body"=>"Trying with logged in user", "conversation_id"=>"1", "user_id"=>3}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mConversation Load (0.3ms)[0m  [1m[34mSELECT  "conversations".* FROM "conversations" WHERE "conversations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Unpermitted parameter: :conversation_id
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (6.8ms)[0m  [1m[32mINSERT INTO "messages" ("body", "conversation_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["body", "Trying with logged in user"], ["conversation_id", 1], ["user_id", 3], ["created_at", "2017-07-21 14:20:39.470653"], ["updated_at", "2017-07-21 14:20:39.470653"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."conversation_id" = $1[0m  [["conversation_id", 1]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers] Rendered ConversationSerializer with ActiveModelSerializers::Adapter::Attributes (26.18ms)
+Completed 200 OK in 41ms (Views: 23.9ms | ActiveRecord: 11.1ms)
+
+
+Started GET "/api/conversations" for 127.0.0.1 at 2017-07-21 15:22:05 +0100
+Processing by ConversationsController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mConversation Load (0.5ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE (sender_id = 8 OR receiver_id = 8)[0m
+[active_model_serializers]   [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."conversation_id" = $1[0m  [["conversation_id", 2]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (5.61ms)
+Completed 200 OK in 10ms (Views: 5.9ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/api/conversations/2/messages" for 127.0.0.1 at 2017-07-21 15:22:51 +0100
+Processing by MessagesController#create as */*
+  Parameters: {"body"=>"Trying with logged in user", "user_id"=>3, "conversation_id"=>"2", "message"=>{"body"=>"Trying with logged in user", "conversation_id"=>"2", "user_id"=>3}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mConversation Load (0.4ms)[0m  [1m[34mSELECT  "conversations".* FROM "conversations" WHERE "conversations"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Unpermitted parameter: :conversation_id
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (2.2ms)[0m  [1m[32mINSERT INTO "messages" ("body", "conversation_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["body", "Trying with logged in user"], ["conversation_id", 2], ["user_id", 3], ["created_at", "2017-07-21 14:22:51.016526"], ["updated_at", "2017-07-21 14:22:51.016526"]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers]   [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."conversation_id" = $1[0m  [["conversation_id", 2]]
+[active_model_serializers] Rendered ConversationSerializer with ActiveModelSerializers::Adapter::Attributes (10.08ms)
+Completed 200 OK in 43ms (Views: 9.6ms | ActiveRecord: 7.6ms)
+
+
+Started GET "/api/conversations" for 127.0.0.1 at 2017-07-21 15:23:54 +0100
+Processing by ConversationsController#index as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mConversation Load (0.5ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE (sender_id = 8 OR receiver_id = 8)[0m
+[active_model_serializers]   [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mMessage Load (0.5ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."conversation_id" = $1[0m  [["conversation_id", 2]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (86.51ms)
+Completed 200 OK in 187ms (Views: 107.6ms | ActiveRecord: 32.9ms)
+
+
+Started GET "/api/projects" for 127.0.0.1 at 2017-07-21 15:27:09 +0100
+Processing by ProjectsController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+[active_model_serializers]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.5ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."project_id" = $1[0m  [["project_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (46.0ms)
+Completed 200 OK in 95ms (Views: 77.2ms | ActiveRecord: 10.3ms)
+
+

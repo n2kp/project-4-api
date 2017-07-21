@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
 
-  get 'messages/index'
 
-  get 'conversations/index'
 
   scope :api do
+    # get 'messages/index'
+    # get 'conversations/index'
     post '/register', to: 'authentications#register'
     post '/login', to: 'authentications#login'
 
