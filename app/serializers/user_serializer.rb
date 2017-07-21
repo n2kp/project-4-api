@@ -8,9 +8,10 @@ class UserSerializer < ActiveModel::Serializer
   has_many :projects
   has_many :reviews
   has_many :tenders
-
+  has_many :conversations
 
   def is_dev?
     object.is_dev
   end
+
 end

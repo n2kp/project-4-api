@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'messages/index'
+
+  get 'conversations/index'
+
   scope :api do
     post '/register', to: 'authentications#register'
     post '/login', to: 'authentications#login'
@@ -8,5 +12,8 @@ Rails.application.routes.draw do
     resources :reviews
     resources :tenders
     resources :projects
+    resources :conversations, only: [:index, :create] do
+      resources :messages, only: [:index, :create]
+    end
   end
 end
