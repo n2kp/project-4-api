@@ -1338,3 +1338,997 @@ Processing by UsersController#index as */*
 Completed 200 OK in 164ms (Views: 136.2ms | ActiveRecord: 19.0ms)
 
 
+Started POST "/api/register" for 127.0.0.1 at 2017-07-21 13:27:17 +0100
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AuthenticationsController#register as HTML
+  Parameters: {"username"=>"Tombo", "firstname"=>"Tom", "lastname"=>"Bo", "email"=>"tom@bo.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "authentication"=>{"username"=>"Tombo", "firstname"=>"Tom", "lastname"=>"Bo", "email"=>"tom@bo.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+Unpermitted parameter: :authentication
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "tom@bo.com"], ["LIMIT", 1]]
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "firstname", "lastname", "created_at", "updated_at", "email", "password_digest") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["username", "Tombo"], ["firstname", "Tom"], ["lastname", "Bo"], ["created_at", "2017-07-21 12:27:17.856753"], ["updated_at", "2017-07-21 12:27:17.856753"], ["email", "tom@bo.com"], ["password_digest", "$2a$10$HhcdXgk1hIcIBGTySAQ.iO7iVTDyogJSmdQNqbbQ5XL55i4PrsESm"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers]   [1m[36mProject Load (0.6ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   [1m[36mTender Load (0.5ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (50.91ms)
+Completed 200 OK in 174ms (Views: 58.7ms | ActiveRecord: 20.4ms)
+
+
+Started POST "/api/login" for 127.0.0.1 at 2017-07-21 13:27:28 +0100
+Processing by AuthenticationsController#login as HTML
+  Parameters: {"email"=>"tom@bo.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"tom@bo.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "tom@bo.com"], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   [1m[36mTender Load (0.4ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (6.13ms)
+Completed 200 OK in 97ms (Views: 5.5ms | ActiveRecord: 9.5ms)
+
+
+Started GET "/api/projects" for 127.0.0.1 at 2017-07-21 13:27:28 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+[active_model_serializers]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.7ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."project_id" = $1[0m  [["project_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (15.33ms)
+Completed 200 OK in 70ms (Views: 62.2ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/api/projects" for 127.0.0.1 at 2017-07-21 13:27:48 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mProject Load (0.9ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+[active_model_serializers]   [1m[36mUser Load (9.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTender Load (6.2ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."project_id" = $1[0m  [["project_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (28.88ms)
+Completed 200 OK in 52ms (Views: 23.2ms | ActiveRecord: 16.9ms)
+
+
+Started GET "/api/users" for 127.0.0.1 at 2017-07-21 13:28:03 +0100
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+[active_model_serializers]   [1m[36mProject Load (1.9ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mReview Load (1.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.5ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mTender Load (0.3ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   [1m[36mTender Load (0.3ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 4]]
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 4]]
+[active_model_serializers]   [1m[36mTender Load (0.4ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 4]]
+[active_model_serializers]   [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   [1m[36mTender Load (0.4ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (53.88ms)
+Completed 200 OK in 60ms (Views: 50.3ms | ActiveRecord: 8.8ms)
+
+
+Started GET "/api/projects" for 127.0.0.1 at 2017-07-21 13:28:16 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+[active_model_serializers]   [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTender Load (2.0ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."project_id" = $1[0m  [["project_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (11.36ms)
+Completed 200 OK in 15ms (Views: 10.9ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/api/users" for 127.0.0.1 at 2017-07-21 13:28:18 +0100
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+[active_model_serializers]   [1m[36mProject Load (2.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mReview Load (1.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mTender Load (3.5ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mReview Load (0.9ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mTender Load (0.5ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mProject Load (1.7ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   [1m[36mTender Load (0.3ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 4]]
+[active_model_serializers]   [1m[36mReview Load (0.7ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 4]]
+[active_model_serializers]   [1m[36mTender Load (0.4ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 4]]
+[active_model_serializers]   [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   [1m[36mTender Load (0.3ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (60.94ms)
+Completed 200 OK in 67ms (Views: 50.6ms | ActiveRecord: 15.6ms)
+
+
+Started GET "/api/projects" for 127.0.0.1 at 2017-07-21 13:29:08 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+[active_model_serializers]   [1m[36mUser Load (4.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTender Load (4.1ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."project_id" = $1[0m  [["project_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (17.43ms)
+Completed 200 OK in 22ms (Views: 12.4ms | ActiveRecord: 8.8ms)
+
+
+Started POST "/api/login" for 127.0.0.1 at 2017-07-21 13:29:15 +0100
+Processing by AuthenticationsController#login as HTML
+  Parameters: {"email"=>"oinviuevb@ljnv.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"oinviuevb@ljnv.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "oinviuevb@ljnv.com"], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.18ms)
+Completed 401 Unauthorized in 9ms (Views: 7.5ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/register" for 127.0.0.1 at 2017-07-21 13:29:34 +0100
+Processing by AuthenticationsController#register as HTML
+  Parameters: {"firstname"=>"kjwbvhke", "lastname"=>"j n", "email"=>"dlvnde@lnv", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "authentication"=>{"firstname"=>"kjwbvhke", "lastname"=>"j n", "email"=>"dlvnde@lnv", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+Unpermitted parameter: :authentication
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "dlvnde@lnv"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Completed 422 Unprocessable Entity in 85ms (Views: 0.4ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/api/register" for 127.0.0.1 at 2017-07-21 13:29:40 +0100
+Processing by AuthenticationsController#register as HTML
+  Parameters: {"firstname"=>"kjwbvhke", "lastname"=>"", "email"=>"dlvnde@lnv", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"ejkcne", "authentication"=>{"firstname"=>"kjwbvhke", "lastname"=>"", "email"=>"dlvnde@lnv", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"ejkcne"}}
+Unpermitted parameter: :authentication
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "dlvnde@lnv"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Completed 422 Unprocessable Entity in 73ms (Views: 0.5ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/register" for 127.0.0.1 at 2017-07-21 13:29:47 +0100
+Processing by AuthenticationsController#register as HTML
+  Parameters: {"firstname"=>"kjwbvhke", "lastname"=>"evew", "email"=>"dlvnde@lnv", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"ejkcne", "authentication"=>{"firstname"=>"kjwbvhke", "lastname"=>"evew", "email"=>"dlvnde@lnv", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"ejkcne"}}
+Unpermitted parameter: :authentication
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "dlvnde@lnv"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Completed 422 Unprocessable Entity in 76ms (Views: 0.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/projects" for 127.0.0.1 at 2017-07-21 13:35:54 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mProject Load (17.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+[active_model_serializers]   [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.3ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."project_id" = $1[0m  [["project_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (10.51ms)
+Completed 200 OK in 31ms (Views: 12.3ms | ActiveRecord: 18.1ms)
+
+
+Started GET "/api/users" for 127.0.0.1 at 2017-07-21 13:35:54 +0100
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+[active_model_serializers]   [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.2ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mTender Load (0.3ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   [1m[36mTender Load (0.3ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 4]]
+[active_model_serializers]   [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 4]]
+[active_model_serializers]   [1m[36mTender Load (0.2ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 4]]
+[active_model_serializers]   [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   [1m[36mTender Load (0.2ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (37.9ms)
+Completed 200 OK in 41ms (Views: 36.2ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/api/users" for 127.0.0.1 at 2017-07-21 13:37:47 +0100
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+[active_model_serializers]   [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.3ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mProject Load (0.7ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mTender Load (0.2ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   [1m[36mTender Load (0.8ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   [1m[36mProject Load (3.7ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 4]]
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 4]]
+[active_model_serializers]   [1m[36mTender Load (0.6ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 4]]
+[active_model_serializers]   [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   [1m[36mReview Load (0.8ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   [1m[36mTender Load (0.2ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (54.08ms)
+Completed 200 OK in 59ms (Views: 48.8ms | ActiveRecord: 10.3ms)
+
+
+Started GET "/api/users" for 127.0.0.1 at 2017-07-21 13:38:07 +0100
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+[active_model_serializers]   [1m[36mProject Load (3.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.3ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mTender Load (0.3ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   [1m[36mTender Load (0.4ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   [1m[36mProject Load (0.7ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 4]]
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 4]]
+[active_model_serializers]   [1m[36mTender Load (0.2ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 4]]
+[active_model_serializers]   [1m[36mProject Load (3.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   [1m[36mTender Load (1.3ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (57.48ms)
+Completed 200 OK in 67ms (Views: 54.4ms | ActiveRecord: 12.4ms)
+
+
+Started GET "/api/users" for 127.0.0.1 at 2017-07-21 13:39:51 +0100
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+[active_model_serializers]   [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.3ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mTender Load (0.3ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   [1m[36mTender Load (0.3ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 4]]
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 4]]
+[active_model_serializers]   [1m[36mTender Load (0.3ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 4]]
+[active_model_serializers]   [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   [1m[36mTender Load (0.5ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (44.4ms)
+Completed 200 OK in 47ms (Views: 41.7ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/api/users" for 127.0.0.1 at 2017-07-21 13:40:19 +0100
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+[active_model_serializers]   [1m[36mProject Load (1.6ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.8ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mProject Load (9.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mTender Load (0.2ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   [1m[36mTender Load (0.2ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   [1m[36mProject Load (2.6ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 4]]
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 4]]
+[active_model_serializers]   [1m[36mTender Load (0.4ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 4]]
+[active_model_serializers]   [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   [1m[36mTender Load (2.5ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (60.71ms)
+Completed 200 OK in 69ms (Views: 48.6ms | ActiveRecord: 20.2ms)
+
+
+Started POST "/api/projects" for 127.0.0.1 at 2017-07-21 13:40:38 +0100
+Processing by ProjectsController#create as HTML
+  Parameters: {"title"=>"wuovbueo", "description"=>"lkenvjen", "project_deadline"=>"2017-07-27T23:00:00.000Z", "bid_deadline"=>"2017-07-26T23:00:00.000Z", "tech_stack"=>"wlkcnljwn", "budget"=>"100", "project"=>{"title"=>"wuovbueo", "description"=>"lkenvjen", "project_deadline"=>"2017-07-27T23:00:00.000Z", "bid_deadline"=>"2017-07-26T23:00:00.000Z", "tech_stack"=>"wlkcnljwn", "budget"=>"100"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with ActiveModel::Errors (0.09ms)
+Completed 422 Unprocessable Entity in 10ms (Views: 2.6ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/projects" for 127.0.0.1 at 2017-07-21 13:40:41 +0100
+Processing by ProjectsController#create as HTML
+  Parameters: {"title"=>"wuovbueo", "description"=>"lkenvjen", "project_deadline"=>"2017-07-27T23:00:00.000Z", "bid_deadline"=>"2017-07-26T23:00:00.000Z", "tech_stack"=>"wlkcnljwn", "budget"=>"100", "is_priority"=>true, "project"=>{"title"=>"wuovbueo", "description"=>"lkenvjen", "project_deadline"=>"2017-07-27T23:00:00.000Z", "bid_deadline"=>"2017-07-26T23:00:00.000Z", "tech_stack"=>"wlkcnljwn", "budget"=>"100", "is_priority"=>true}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with ActiveModel::Errors (0.12ms)
+Completed 422 Unprocessable Entity in 5ms (Views: 0.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/projects" for 127.0.0.1 at 2017-07-21 13:40:51 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mProject Load (7.0ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+[active_model_serializers]   [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.4ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."project_id" = $1[0m  [["project_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (5.86ms)
+Completed 200 OK in 17ms (Views: 8.5ms | ActiveRecord: 7.9ms)
+
+
+Started POST "/api/login" for 127.0.0.1 at 2017-07-21 13:40:54 +0100
+Processing by AuthenticationsController#login as HTML
+  Parameters: {"email"=>"tom@bo.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"tom@bo.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "tom@bo.com"], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   [1m[36mTender Load (0.2ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (4.46ms)
+Completed 200 OK in 75ms (Views: 4.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/api/projects" for 127.0.0.1 at 2017-07-21 13:40:54 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+[active_model_serializers]   [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTender Load (3.2ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."project_id" = $1[0m  [["project_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (9.38ms)
+Completed 200 OK in 11ms (Views: 7.2ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/api/users" for 127.0.0.1 at 2017-07-21 13:40:55 +0100
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+[active_model_serializers]   [1m[36mProject Load (5.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.3ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mTender Load (0.4ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   [1m[36mTender Load (0.2ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 4]]
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 4]]
+[active_model_serializers]   [1m[36mTender Load (0.1ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 4]]
+[active_model_serializers]   [1m[36mProject Load (0.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   [1m[36mTender Load (0.1ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (40.18ms)
+Completed 200 OK in 45ms (Views: 35.0ms | ActiveRecord: 9.7ms)
+
+
+Started POST "/api/projects" for 127.0.0.1 at 2017-07-21 13:41:13 +0100
+Processing by ProjectsController#create as HTML
+  Parameters: {"title"=>"'peiojvoin", "description"=>"kjenvkjdnb", "project_deadline"=>"2017-07-19T23:00:00.000Z", "bid_deadline"=>"2017-07-28T23:00:00.000Z", "tech_stack"=>"wlkcmnvw", "budget"=>"1000", "is_priority"=>true, "project"=>{"title"=>"'peiojvoin", "description"=>"kjenvkjdnb", "project_deadline"=>"2017-07-19T23:00:00.000Z", "bid_deadline"=>"2017-07-28T23:00:00.000Z", "tech_stack"=>"wlkcmnvw", "budget"=>"1000", "is_priority"=>true}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with ActiveModel::Errors (0.15ms)
+Completed 422 Unprocessable Entity in 5ms (Views: 0.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/projects" for 127.0.0.1 at 2017-07-21 13:45:54 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mProject Load (9.0ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+[active_model_serializers]   [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.5ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."project_id" = $1[0m  [["project_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (9.23ms)
+Completed 200 OK in 27ms (Views: 13.7ms | ActiveRecord: 12.0ms)
+
+
+Started POST "/api/login" for 127.0.0.1 at 2017-07-21 13:45:56 +0100
+Processing by AuthenticationsController#login as HTML
+  Parameters: {"email"=>"tom@bo.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"tom@bo.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "tom@bo.com"], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   [1m[36mTender Load (0.2ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (4.6ms)
+Completed 200 OK in 76ms (Views: 4.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/api/projects" for 127.0.0.1 at 2017-07-21 13:45:56 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+[active_model_serializers]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTender Load (4.0ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."project_id" = $1[0m  [["project_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (10.01ms)
+Completed 200 OK in 12ms (Views: 7.1ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/api/projects" for 127.0.0.1 at 2017-07-21 13:46:58 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mProject Load (1.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+[active_model_serializers]   [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.8ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."project_id" = $1[0m  [["project_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (7.19ms)
+Completed 200 OK in 12ms (Views: 8.6ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/api/projects" for 127.0.0.1 at 2017-07-21 13:47:20 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+[active_model_serializers]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.2ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."project_id" = $1[0m  [["project_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (5.73ms)
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/users" for 127.0.0.1 at 2017-07-21 13:47:26 +0100
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+[active_model_serializers]   [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.2ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mTender Load (0.2ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mProject Load (0.6ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   [1m[36mTender Load (0.2ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   [1m[36mProject Load (0.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 4]]
+[active_model_serializers]   [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 4]]
+[active_model_serializers]   [1m[36mTender Load (0.1ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 4]]
+[active_model_serializers]   [1m[36mProject Load (0.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   [1m[36mTender Load (0.1ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (28.3ms)
+Completed 200 OK in 41ms (Views: 35.5ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/api/projects" for 127.0.0.1 at 2017-07-21 13:47:28 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mProject Load (5.9ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+[active_model_serializers]   [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.3ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."project_id" = $1[0m  [["project_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (9.36ms)
+Completed 200 OK in 19ms (Views: 10.1ms | ActiveRecord: 8.6ms)
+
+
+Started POST "/api/login" for 127.0.0.1 at 2017-07-21 13:47:54 +0100
+Processing by AuthenticationsController#login as HTML
+  Parameters: {"email"=>"tom@bo.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"tom@bo.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "tom@bo.com"], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   [1m[36mTender Load (0.2ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (4.96ms)
+Completed 200 OK in 76ms (Views: 4.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/projects" for 127.0.0.1 at 2017-07-21 13:47:54 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+[active_model_serializers]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.3ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."project_id" = $1[0m  [["project_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (6.96ms)
+Completed 200 OK in 10ms (Views: 8.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/projects/1" for 127.0.0.1 at 2017-07-21 13:48:03 +0100
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTender Load (5.0ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."project_id" = $1[0m  [["project_id", 1]]
+[active_model_serializers] Rendered ProjectSerializer with ActiveModelSerializers::Adapter::Attributes (10.61ms)
+Completed 200 OK in 18ms (Views: 5.8ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/api/projects" for 127.0.0.1 at 2017-07-21 13:48:04 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+[active_model_serializers]   [1m[36mUser Load (3.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.3ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."project_id" = $1[0m  [["project_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (9.88ms)
+Completed 200 OK in 15ms (Views: 10.3ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/api/users" for 127.0.0.1 at 2017-07-21 13:48:05 +0100
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+[active_model_serializers]   [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mTender Load (1.4ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mProject Load (3.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mTender Load (0.3ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   [1m[36mReview Load (0.7ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   [1m[36mTender Load (0.2ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 4]]
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 4]]
+[active_model_serializers]   [1m[36mTender Load (0.1ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 4]]
+[active_model_serializers]   [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   [1m[36mTender Load (0.2ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (43.12ms)
+Completed 200 OK in 55ms (Views: 46.0ms | ActiveRecord: 8.9ms)
+
+
+Started GET "/api/users" for 127.0.0.1 at 2017-07-21 13:51:30 +0100
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+[active_model_serializers]   [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.3ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mTender Load (3.9ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   [1m[36mTender Load (5.1ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 4]]
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 4]]
+[active_model_serializers]   [1m[36mTender Load (0.3ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 4]]
+[active_model_serializers]   [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   [1m[36mTender Load (0.7ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (71.9ms)
+Completed 200 OK in 90ms (Views: 68.3ms | ActiveRecord: 15.2ms)
+
+
+Started GET "/api/users" for 127.0.0.1 at 2017-07-21 13:53:51 +0100
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+[active_model_serializers]   [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.7ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mTender Load (0.4ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   [1m[36mTender Load (0.3ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 4]]
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 4]]
+[active_model_serializers]   [1m[36mTender Load (0.3ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 4]]
+[active_model_serializers]   [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   [1m[36mTender Load (0.2ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (43.57ms)
+Completed 200 OK in 48ms (Views: 41.9ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/api/users" for 127.0.0.1 at 2017-07-21 13:54:05 +0100
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+[active_model_serializers]   [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.3ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mTender Load (0.9ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   [1m[36mTender Load (0.3ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   [1m[36mProject Load (3.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 4]]
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 4]]
+[active_model_serializers]   [1m[36mTender Load (0.2ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 4]]
+[active_model_serializers]   [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   [1m[36mTender Load (0.3ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (47.1ms)
+Completed 200 OK in 50ms (Views: 41.8ms | ActiveRecord: 7.9ms)
+
+
+Started GET "/api/users" for 127.0.0.1 at 2017-07-21 13:54:13 +0100
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+[active_model_serializers]   [1m[36mProject Load (1.9ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.2ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mProject Load (2.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mTender Load (4.0ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mProject Load (2.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   [1m[36mTender Load (0.3ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 4]]
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 4]]
+[active_model_serializers]   [1m[36mTender Load (0.4ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 4]]
+[active_model_serializers]   [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   [1m[36mTender Load (0.3ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (66.84ms)
+Completed 200 OK in 73ms (Views: 58.4ms | ActiveRecord: 14.5ms)
+
+
+Started GET "/api/users" for 127.0.0.1 at 2017-07-21 13:54:20 +0100
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+[active_model_serializers]   [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.2ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mTender Load (0.2ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   [1m[36mTender Load (0.2ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 4]]
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 4]]
+[active_model_serializers]   [1m[36mTender Load (0.2ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 4]]
+[active_model_serializers]   [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   [1m[36mTender Load (0.2ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (39.25ms)
+Completed 200 OK in 42ms (Views: 37.7ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/api/users" for 127.0.0.1 at 2017-07-21 13:54:37 +0100
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+[active_model_serializers]   [1m[36mProject Load (1.8ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mTender Load (1.3ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mProject Load (16.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mTender Load (3.4ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   [1m[36mTender Load (0.2ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   [1m[36mProject Load (2.8ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 4]]
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 4]]
+[active_model_serializers]   [1m[36mTender Load (0.2ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 4]]
+[active_model_serializers]   [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   [1m[36mTender Load (0.3ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (103.7ms)
+Completed 200 OK in 110ms (Views: 80.1ms | ActiveRecord: 29.6ms)
+
+
+Started GET "/api/projects" for 127.0.0.1 at 2017-07-21 13:54:38 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mProject Load (5.9ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+[active_model_serializers]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.3ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."project_id" = $1[0m  [["project_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (4.79ms)
+Completed 200 OK in 15ms (Views: 8.2ms | ActiveRecord: 6.5ms)
+
+
+Started GET "/api/projects" for 127.0.0.1 at 2017-07-21 13:54:41 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+[active_model_serializers]   [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.8ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."project_id" = $1[0m  [["project_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (10.34ms)
+Completed 200 OK in 14ms (Views: 9.5ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/api/projects" for 127.0.0.1 at 2017-07-21 13:56:22 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mProject Load (0.6ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+[active_model_serializers]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTender Load (2.9ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."project_id" = $1[0m  [["project_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (9.68ms)
+Completed 200 OK in 13ms (Views: 8.7ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/api/users" for 127.0.0.1 at 2017-07-21 13:56:23 +0100
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+[active_model_serializers]   [1m[36mProject Load (2.7ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mTender Load (1.1ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mProject Load (2.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mReview Load (1.9ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mTender Load (10.9ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   [1m[36mTender Load (0.4ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 4]]
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 4]]
+[active_model_serializers]   [1m[36mTender Load (0.5ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 4]]
+[active_model_serializers]   [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   [1m[36mTender Load (0.2ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (60.74ms)
+Completed 200 OK in 64ms (Views: 40.9ms | ActiveRecord: 22.9ms)
+
+
+Started GET "/api/projects" for 127.0.0.1 at 2017-07-21 13:56:25 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+[active_model_serializers]   [1m[36mUser Load (6.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.7ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."project_id" = $1[0m  [["project_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (14.65ms)
+Completed 200 OK in 18ms (Views: 9.3ms | ActiveRecord: 7.7ms)
+
+
+Started GET "/api/projects/1" for 127.0.0.1 at 2017-07-21 13:56:26 +0100
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (3.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTender Load (2.8ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."project_id" = $1[0m  [["project_id", 1]]
+[active_model_serializers] Rendered ProjectSerializer with ActiveModelSerializers::Adapter::Attributes (8.66ms)
+Completed 200 OK in 15ms (Views: 6.4ms | ActiveRecord: 6.4ms)
+
+
+Started GET "/api/projects/1" for 127.0.0.1 at 2017-07-21 13:56:28 +0100
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTender Load (1.1ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."project_id" = $1[0m  [["project_id", 1]]
+[active_model_serializers] Rendered ProjectSerializer with ActiveModelSerializers::Adapter::Attributes (6.65ms)
+Completed 200 OK in 13ms (Views: 5.8ms | ActiveRecord: 1.9ms)
+
+
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (22.8ms)[0m  [1m[35mTRUNCATE users RESTART IDENTITY CASCADE[0m
+  [1m[35m (9.3ms)[0m  [1m[35mTRUNCATE projects RESTART IDENTITY CASCADE[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "simon@justo.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "users" ("username", "firstname", "lastname", "created_at", "updated_at", "email", "password_digest", "image", "is_dev", "tech_stack") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["username", "simona"], ["firstname", "Simon"], ["lastname", "Amor"], ["created_at", "2017-07-21 12:59:45.150345"], ["updated_at", "2017-07-21 12:59:45.150345"], ["email", "simon@justo.com"], ["password_digest", "password"], ["image", "simon.jpeg"], ["is_dev", "t"], ["tech_stack", "HTML, CSS, JS, Angular"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "tim@justo.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "firstname", "lastname", "created_at", "updated_at", "email", "password_digest", "image", "is_dev", "tech_stack") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["username", "timr"], ["firstname", "Tim"], ["lastname", "Rooke"], ["created_at", "2017-07-21 12:59:45.154680"], ["updated_at", "2017-07-21 12:59:45.154680"], ["email", "tim@justo.com"], ["password_digest", "password"], ["image", "tim.jpeg"], ["is_dev", "t"], ["tech_stack", "HTML, CSS, JS, Angular"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "nimesh@justo.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "firstname", "lastname", "created_at", "updated_at", "email", "password_digest", "image", "is_dev") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["username", "nimeshp"], ["firstname", "Nimesh"], ["lastname", "Patel"], ["created_at", "2017-07-21 12:59:45.157524"], ["updated_at", "2017-07-21 12:59:45.157524"], ["email", "nimesh@justo.com"], ["password_digest", "password"], ["image", "nimesh.jpeg"], ["is_dev", "f"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "james@justo.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "firstname", "lastname", "created_at", "updated_at", "email", "password_digest", "image", "is_dev") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["username", "jamesc"], ["firstname", "James"], ["lastname", "Clarke"], ["created_at", "2017-07-21 12:59:45.160346"], ["updated_at", "2017-07-21 12:59:45.160346"], ["email", "james@justo.com"], ["password_digest", "password"], ["image", "james.jpeg"], ["is_dev", "f"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "projects" ("title", "description", "project_deadline", "bid_deadline", "tech_stack", "budget", "is_active", "is_priority", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["title", "Floral Ecommerce website needed ASAP"], ["description", "I need a responsive commerce website to be build asap. I have some flowers and stuff that I really need to sell online because people need an online based flower experience to rival that of apple, uber and airB&B. Please help me!"], ["project_deadline", "2017-04-28 00:00:00"], ["bid_deadline", "2017-03-28 00:00:00"], ["tech_stack", "HTML, CSS, JS"], ["budget", 1000], ["is_active", "t"], ["is_priority", "f"], ["user_id", 3], ["created_at", "2017-07-21 12:59:45.193119"], ["updated_at", "2017-07-21 12:59:45.193119"]]
+  [1m[35m (3.1ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/api/projects/1" for 127.0.0.1 at 2017-07-21 13:59:53 +0100
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTender Load (1.2ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."project_id" = $1[0m  [["project_id", 1]]
+[active_model_serializers] Rendered ProjectSerializer with ActiveModelSerializers::Adapter::Attributes (46.93ms)
+Completed 200 OK in 97ms (Views: 58.9ms | ActiveRecord: 13.7ms)
+
+
+Started GET "/api/projects/1" for 127.0.0.1 at 2017-07-21 13:59:56 +0100
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.9ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.7ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."project_id" = $1[0m  [["project_id", 1]]
+[active_model_serializers] Rendered ProjectSerializer with ActiveModelSerializers::Adapter::Attributes (5.5ms)
+Completed 200 OK in 36ms (Views: 4.4ms | ActiveRecord: 10.6ms)
+
+
+Started GET "/api/projects" for 127.0.0.1 at 2017-07-21 13:59:57 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mProject Load (6.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+[active_model_serializers]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTender Load (0.4ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."project_id" = $1[0m  [["project_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (5.1ms)
+Completed 200 OK in 19ms (Views: 11.5ms | ActiveRecord: 7.2ms)
+
+
+Started POST "/api/login" for 127.0.0.1 at 2017-07-21 14:00:41 +0100
+Processing by AuthenticationsController#login as HTML
+  Parameters: {"email"=>"james@justo.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"james@justo.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "james@justo.com"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.6ms)
+
+
+  
+BCrypt::Errors::InvalidHash (invalid hash):
+  
+app/controllers/authentications_controller.rb:13:in `login'
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (206.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "final_project_api_development"[0m
+  [1m[35m (160.5ms)[0m  [1m[35mDROP DATABASE IF EXISTS "final_project_api_test"[0m
+  [1m[35m (35.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (4.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "final_project_api_development"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "final_project_api_test"[0m
+  [1m[35m (4.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(737815420147457505);[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20170720085412)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (9.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying, "firstname" character varying, "lastname" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170720085412"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumnToUser (20170721085921)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "users" ADD "email" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "password_digest" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "image" text[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "is_dev" boolean[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "portfolio_url" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "linkedin_url" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "github_url" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "tech_stack" character varying[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170721085921"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateProjects (20170721090531)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (10.1ms)[0m  [1m[35mCREATE TABLE "projects" ("id" bigserial primary key, "title" character varying, "description" text, "project_deadline" timestamp, "bid_deadline" timestamp, "tech_stack" character varying, "budget" integer, "is_active" boolean, "is_priority" boolean, "user_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_b872a6760a"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE  INDEX  "index_projects_on_user_id" ON "projects"  ("user_id")[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170721090531"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateTenders (20170721090722)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (9.4ms)[0m  [1m[35mCREATE TABLE "tenders" ("id" bigserial primary key, "bid" integer, "pitch" text, "image" text, "is_active" boolean, "status" character varying, "user_id" bigint, "project_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_23087695b1"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_3ab14d00e6"
+FOREIGN KEY ("project_id")
+  REFERENCES "projects" ("id")
+)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE  INDEX  "index_tenders_on_user_id" ON "tenders"  ("user_id")[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE  INDEX  "index_tenders_on_project_id" ON "tenders"  ("project_id")[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170721090722"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateReviews (20170721090807)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (7.1ms)[0m  [1m[35mCREATE TABLE "reviews" ("id" bigserial primary key, "body" text, "rating" integer, "user_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_74a66bd6c5"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE  INDEX  "index_reviews_on_user_id" ON "reviews"  ("user_id")[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170721090807"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-07-21 13:03:18.603700"], ["updated_at", "2017-07-21 13:03:18.603700"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_advisory_unlock(737815420147457505)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (16.0ms)[0m  [1m[35mTRUNCATE users RESTART IDENTITY CASCADE[0m
+  [1m[35m (9.3ms)[0m  [1m[35mTRUNCATE projects RESTART IDENTITY CASCADE[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "simon@justo.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "users" ("username", "firstname", "lastname", "created_at", "updated_at", "email", "password_digest", "image", "is_dev", "tech_stack") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["username", "simona"], ["firstname", "Simon"], ["lastname", "Amor"], ["created_at", "2017-07-21 13:03:18.762098"], ["updated_at", "2017-07-21 13:03:18.762098"], ["email", "simon@justo.com"], ["password_digest", "password"], ["image", "simon.jpeg"], ["is_dev", "t"], ["tech_stack", "HTML, CSS, JS, Angular"]]
+  [1m[35m (18.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "tim@justo.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "firstname", "lastname", "created_at", "updated_at", "email", "password_digest", "image", "is_dev", "tech_stack") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["username", "timr"], ["firstname", "Tim"], ["lastname", "Rooke"], ["created_at", "2017-07-21 13:03:18.785069"], ["updated_at", "2017-07-21 13:03:18.785069"], ["email", "tim@justo.com"], ["password_digest", "password"], ["image", "tim.jpeg"], ["is_dev", "t"], ["tech_stack", "HTML, CSS, JS, Angular"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "nimesh@justo.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "firstname", "lastname", "created_at", "updated_at", "email", "password_digest", "image", "is_dev") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["username", "nimeshp"], ["firstname", "Nimesh"], ["lastname", "Patel"], ["created_at", "2017-07-21 13:03:18.788213"], ["updated_at", "2017-07-21 13:03:18.788213"], ["email", "nimesh@justo.com"], ["password_digest", "password"], ["image", "nimesh.jpeg"], ["is_dev", "f"]]
+  [1m[35m (8.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "james@justo.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "firstname", "lastname", "created_at", "updated_at", "email", "password_digest", "image", "is_dev") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["username", "jamesc"], ["firstname", "James"], ["lastname", "Clarke"], ["created_at", "2017-07-21 13:03:18.800721"], ["updated_at", "2017-07-21 13:03:18.800721"], ["email", "james@justo.com"], ["password_digest", "password"], ["image", "james.jpeg"], ["is_dev", "f"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (1.7ms)[0m  [1m[32mINSERT INTO "projects" ("title", "description", "project_deadline", "bid_deadline", "tech_stack", "budget", "is_active", "is_priority", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["title", "Floral Ecommerce website needed ASAP"], ["description", "I need a responsive commerce website to be build asap. I have some flowers and stuff that I really need to sell online because people need an online based flower experience to rival that of apple, uber and airB&B. Please help me!"], ["project_deadline", "2017-04-28 00:00:00"], ["bid_deadline", "2017-03-28 00:00:00"], ["tech_stack", "HTML, CSS, JS"], ["budget", 1000], ["is_active", "t"], ["is_priority", "f"], ["user_id", 3], ["created_at", "2017-07-21 13:03:18.855052"], ["updated_at", "2017-07-21 13:03:18.855052"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Started POST "/api/login" for 127.0.0.1 at 2017-07-21 14:03:41 +0100
+  
+ActiveRecord::NoDatabaseError (FATAL:  database "final_project_api_development" does not exist
+):
+  
+activerecord (5.1.2) lib/active_record/connection_adapters/postgresql_adapter.rb:705:in `rescue in connect'
+activerecord (5.1.2) lib/active_record/connection_adapters/postgresql_adapter.rb:701:in `connect'
+activerecord (5.1.2) lib/active_record/connection_adapters/postgresql_adapter.rb:220:in `initialize'
+activerecord (5.1.2) lib/active_record/connection_adapters/postgresql_adapter.rb:38:in `new'
+activerecord (5.1.2) lib/active_record/connection_adapters/postgresql_adapter.rb:38:in `postgresql_connection'
+activerecord (5.1.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:759:in `new_connection'
+activerecord (5.1.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:803:in `checkout_new_connection'
+activerecord (5.1.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:782:in `try_to_checkout_new_connection'
+activerecord (5.1.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:743:in `acquire_connection'
+activerecord (5.1.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:500:in `checkout'
+activerecord (5.1.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:374:in `connection'
+activerecord (5.1.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:931:in `retrieve_connection'
+activerecord (5.1.2) lib/active_record/connection_handling.rb:116:in `retrieve_connection'
+activerecord (5.1.2) lib/active_record/connection_handling.rb:88:in `connection'
+activerecord (5.1.2) lib/active_record/migration.rb:562:in `connection'
+activerecord (5.1.2) lib/active_record/migration.rb:553:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.2) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.2) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.0) lib/rack/cors.rb:93:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  [1m[35m (0.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "final_project_api_development"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "final_project_api_test"[0m
+  [1m[35m (398.4ms)[0m  [1m[35mCREATE DATABASE "final_project_api_development" ENCODING = 'unicode'[0m
+  [1m[35m (398.9ms)[0m  [1m[35mCREATE DATABASE "final_project_api_test" ENCODING = 'unicode'[0m
+  [1m[35m (10.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (5.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1347200930821886805);[0m
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20170720085412)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.6ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying, "firstname" character varying, "lastname" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170720085412"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumnToUser (20170721085921)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ADD "email" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "password_digest" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "image" text[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "is_dev" boolean[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "portfolio_url" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "linkedin_url" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "github_url" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "tech_stack" character varying[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170721085921"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateProjects (20170721090531)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (7.3ms)[0m  [1m[35mCREATE TABLE "projects" ("id" bigserial primary key, "title" character varying, "description" text, "project_deadline" timestamp, "bid_deadline" timestamp, "tech_stack" character varying, "budget" integer, "is_active" boolean, "is_priority" boolean, "user_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_b872a6760a"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE  INDEX  "index_projects_on_user_id" ON "projects"  ("user_id")[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170721090531"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateTenders (20170721090722)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (8.0ms)[0m  [1m[35mCREATE TABLE "tenders" ("id" bigserial primary key, "bid" integer, "pitch" text, "image" text, "is_active" boolean, "status" character varying, "user_id" bigint, "project_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_23087695b1"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_3ab14d00e6"
+FOREIGN KEY ("project_id")
+  REFERENCES "projects" ("id")
+)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE  INDEX  "index_tenders_on_user_id" ON "tenders"  ("user_id")[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE  INDEX  "index_tenders_on_project_id" ON "tenders"  ("project_id")[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170721090722"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateReviews (20170721090807)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (7.0ms)[0m  [1m[35mCREATE TABLE "reviews" ("id" bigserial primary key, "body" text, "rating" integer, "user_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_74a66bd6c5"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE  INDEX  "index_reviews_on_user_id" ON "reviews"  ("user_id")[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170721090807"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-07-21 13:04:41.779865"], ["updated_at", "2017-07-21 13:04:41.779865"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(1347200930821886805)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (15.2ms)[0m  [1m[35mTRUNCATE users RESTART IDENTITY CASCADE[0m
+  [1m[35m (11.0ms)[0m  [1m[35mTRUNCATE projects RESTART IDENTITY CASCADE[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "simon@justo.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "firstname", "lastname", "created_at", "updated_at", "email", "password_digest", "image", "is_dev", "tech_stack") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["username", "simona"], ["firstname", "Simon"], ["lastname", "Amor"], ["created_at", "2017-07-21 13:04:41.932585"], ["updated_at", "2017-07-21 13:04:41.932585"], ["email", "simon@justo.com"], ["password_digest", "password"], ["image", "simon.jpeg"], ["is_dev", "t"], ["tech_stack", "HTML, CSS, JS, Angular"]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "tim@justo.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "firstname", "lastname", "created_at", "updated_at", "email", "password_digest", "image", "is_dev", "tech_stack") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["username", "timr"], ["firstname", "Tim"], ["lastname", "Rooke"], ["created_at", "2017-07-21 13:04:41.937835"], ["updated_at", "2017-07-21 13:04:41.937835"], ["email", "tim@justo.com"], ["password_digest", "password"], ["image", "tim.jpeg"], ["is_dev", "t"], ["tech_stack", "HTML, CSS, JS, Angular"]]
+  [1m[35m (6.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "nimesh@justo.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "firstname", "lastname", "created_at", "updated_at", "email", "password_digest", "image", "is_dev") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["username", "nimeshp"], ["firstname", "Nimesh"], ["lastname", "Patel"], ["created_at", "2017-07-21 13:04:41.947689"], ["updated_at", "2017-07-21 13:04:41.947689"], ["email", "nimesh@justo.com"], ["password_digest", "password"], ["image", "nimesh.jpeg"], ["is_dev", "f"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "james@justo.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "firstname", "lastname", "created_at", "updated_at", "email", "password_digest", "image", "is_dev") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["username", "jamesc"], ["firstname", "James"], ["lastname", "Clarke"], ["created_at", "2017-07-21 13:04:41.951569"], ["updated_at", "2017-07-21 13:04:41.951569"], ["email", "james@justo.com"], ["password_digest", "password"], ["image", "james.jpeg"], ["is_dev", "f"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "projects" ("title", "description", "project_deadline", "bid_deadline", "tech_stack", "budget", "is_active", "is_priority", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["title", "Floral Ecommerce website needed ASAP"], ["description", "I need a responsive commerce website to be build asap. I have some flowers and stuff that I really need to sell online because people need an online based flower experience to rival that of apple, uber and airB&B. Please help me!"], ["project_deadline", "2017-04-28 00:00:00"], ["bid_deadline", "2017-03-28 00:00:00"], ["tech_stack", "HTML, CSS, JS"], ["budget", 1000], ["is_active", "t"], ["is_priority", "f"], ["user_id", 3], ["created_at", "2017-07-21 13:04:41.984275"], ["updated_at", "2017-07-21 13:04:41.984275"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+Started POST "/api/login" for 127.0.0.1 at 2017-07-21 14:05:09 +0100
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AuthenticationsController#login as HTML
+  Parameters: {"email"=>"james@justo.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"james@justo.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "james@justo.com"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 6.0ms)
+
+
+  
+BCrypt::Errors::InvalidHash (invalid hash):
+  
+app/controllers/authentications_controller.rb:13:in `login'
