@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  bid: 1
+  pitch: MyText
+  image: MyText
+  is_active: false
+  status: MyString
+  user: one
+  project: one
+
+two:
+  bid: 1
+  pitch: MyText
+  image: MyText
+  is_active: false
+  status: MyString
+  user: two
+  project: two

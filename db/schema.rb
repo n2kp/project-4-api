@@ -10,9 +10,67 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20170721090807) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "projects", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.datetime "project_deadline"
+    t.datetime "bid_deadline"
+    t.string "tech_stack"
+    t.integer "budget"
+    t.boolean "is_active"
+    t.boolean "is_priority"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_projects_on_user_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.text "body"
+    t.integer "rating"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_reviews_on_user_id"
+  end
+
+  create_table "tenders", force: :cascade do |t|
+    t.integer "bid"
+    t.text "pitch"
+    t.text "image"
+    t.boolean "is_active"
+    t.string "status"
+    t.bigint "user_id"
+    t.bigint "project_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["project_id"], name: "index_tenders_on_project_id"
+    t.index ["user_id"], name: "index_tenders_on_user_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "username"
+    t.string "firstname"
+    t.string "lastname"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "email"
+    t.string "password_digest"
+    t.text "image"
+    t.boolean "is_dev"
+    t.string "portfolio_url"
+    t.string "linkedin_url"
+    t.string "github_url"
+    t.string "tech_stack"
+  end
+
+  add_foreign_key "projects", "users"
+  add_foreign_key "reviews", "users"
+  add_foreign_key "tenders", "projects"
+  add_foreign_key "tenders", "users"
 end
