@@ -284,9 +284,9 @@ Completed 200 OK in 27ms (Views: 16.8ms | ActiveRecord: 5.0ms)
 
 
 Started GET "/api/projects" for 127.0.0.1 at 2017-07-21 10:18:12 +0100
-  
+
 ActionController::RoutingError (No route matches [GET] "/api/projects"):
-  
+
 actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
 actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
 railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
@@ -446,9 +446,9 @@ Completed 200 OK in 93ms (Views: 69.5ms | ActiveRecord: 19.0ms)
 
 Started POST "/api/register" for 127.0.0.1 at 2017-07-21 11:08:16 +0100
   [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  
+
 ActionController::RoutingError (No route matches [POST] "/api/register"):
-  
+
 actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
 actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
 railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
@@ -473,12 +473,12 @@ puma (3.9.1) lib/puma/server.rb:299:in `block in run'
 puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
 Started POST "/api/register" for 127.0.0.1 at 2017-07-21 11:10:16 +0100
 Started POST "/api/register" for 127.0.0.1 at 2017-07-21 11:10:26 +0100
-  
-  
+
+
 ActionController::RoutingError (uninitialized constant AuthenticationsController):
 ActionController::RoutingError (uninitialized constant AuthenticationsController):
-  
-  
+
+
 activesupport (5.1.2) lib/active_support/inflector/methods.rb:269:in `const_get'
 activesupport (5.1.2) lib/active_support/inflector/methods.rb:269:in `block in constantize'
 activesupport (5.1.2) lib/active_support/inflector/methods.rb:267:in `each'
@@ -564,9 +564,9 @@ puma (3.9.1) lib/puma/server.rb:435:in `process_client'
 puma (3.9.1) lib/puma/server.rb:299:in `block in run'
 puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
 Started POST "/api/register" for 127.0.0.1 at 2017-07-21 11:10:55 +0100
-  
+
 LoadError (Unable to autoload constant AuthenticationsController, expected /Users/nimesh/Development/project-4-setup/final_project_api/app/controllers/authentications_controller.rb to define it):
-  
+
 activesupport (5.1.2) lib/active_support/dependencies.rb:511:in `load_missing_constant'
 activesupport (5.1.2) lib/active_support/dependencies.rb:202:in `const_missing'
 activesupport (5.1.2) lib/active_support/inflector/methods.rb:269:in `const_get'
@@ -615,9 +615,9 @@ puma (3.9.1) lib/puma/server.rb:299:in `block in run'
 puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
 Started POST "/api/register" for 127.0.0.1 at 2017-07-21 11:11:11 +0100
   [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  
+
 LoadError (Unable to autoload constant AuthenticationsController, expected /Users/nimesh/Development/project-4-setup/final_project_api/app/controllers/authentications_controller.rb to define it):
-  
+
 activesupport (5.1.2) lib/active_support/dependencies.rb:511:in `load_missing_constant'
 activesupport (5.1.2) lib/active_support/dependencies.rb:202:in `const_missing'
 activesupport (5.1.2) lib/active_support/inflector/methods.rb:269:in `const_get'
@@ -671,10 +671,10 @@ Processing by AuthenticationsController#register as */*
 Completed 500 Internal Server Error in 100ms (ActiveRecord: 0.0ms)
 
 
-  
+
 NameError (undefined local variable or method `user_params' for #<AuthenticationsController:0x007fe7928c8ff8>
 Did you mean?  user_path):
-  
+
 app/controllers/authentications_controller.rb:3:in `register'
 Started POST "/api/register" for 127.0.0.1 at 2017-07-21 11:13:50 +0100
 Processing by AuthenticationsController#register as */*
@@ -682,9 +682,9 @@ Processing by AuthenticationsController#register as */*
 Completed 400 Bad Request in 8ms (ActiveRecord: 0.0ms)
 
 
-  
+
 ActionController::ParameterMissing (param is missing or the value is empty: user):
-  
+
 app/controllers/authentications_controller.rb:23:in `user_params'
 app/controllers/authentications_controller.rb:3:in `register'
 Started POST "/api/register" for 127.0.0.1 at 2017-07-21 11:14:45 +0100
@@ -721,12 +721,12 @@ Contents:
 	"email": "test@user.com",
 	"password": "pass",
 }
-  
+
 ActionDispatch::Http::Parameters::ParseError (822: unexpected token at '{
 	"email": "test@user.com",
 	"password": "pass",
 }'):
-  
+
 actionpack (5.1.2) lib/action_dispatch/http/parameters.rb:113:in `rescue in parse_formatted_parameters'
 actionpack (5.1.2) lib/action_dispatch/http/parameters.rb:107:in `parse_formatted_parameters'
 actionpack (5.1.2) lib/action_dispatch/http/request.rb:358:in `block in POST'
@@ -859,10 +859,10 @@ Processing by UsersController#index as */*
 Completed 500 Internal Server Error in 180ms (ActiveRecord: 10.2ms)
 
 
-  
+
 NoMethodError (undefined method `push' for #<User:0x007fe7929f1470>
 Did you mean?  puts):
-  
+
 app/serializers/user_serializer.rb:9:in `is_dev?'
 app/controllers/users_controller.rb:8:in `index'
 Started GET "/api/users" for 127.0.0.1 at 2017-07-21 11:22:03 +0100
@@ -940,9 +940,9 @@ Processing by UsersController#index as */*
 Completed 500 Internal Server Error in 110ms (ActiveRecord: 7.3ms)
 
 
-  
+
 ArgumentError (wrong number of arguments (given 1, expected 0)):
-  
+
 app/serializers/user_serializer.rb:9:in `is_dev?'
 app/controllers/users_controller.rb:8:in `index'
 Started GET "/api/users" for 127.0.0.1 at 2017-07-21 11:25:44 +0100
@@ -1020,9 +1020,9 @@ Processing by UsersController#index as */*
 Completed 500 Internal Server Error in 154ms (ActiveRecord: 20.0ms)
 
 
-  
+
 NoMethodError (undefined method `portfolio_url' for #<UserSerializer:0x007fe792aa2680>):
-  
+
 app/serializers/user_serializer.rb:9:in `is_dev?'
 app/controllers/users_controller.rb:8:in `index'
 Started GET "/api/users" for 127.0.0.1 at 2017-07-21 11:27:05 +0100
@@ -1075,10 +1075,10 @@ Processing by UsersController#index as */*
 Completed 500 Internal Server Error in 118ms (ActiveRecord: 5.4ms)
 
 
-  
+
 NoMethodError (undefined method `self' for #<User:0x007fe78fc741f0>
 Did you mean?  itself):
-  
+
 app/serializers/user_serializer.rb:9:in `is_dev?'
 app/controllers/users_controller.rb:8:in `index'
 Started GET "/api/users" for 127.0.0.1 at 2017-07-21 11:29:20 +0100
@@ -1106,9 +1106,9 @@ Processing by UsersController#index as */*
 Completed 500 Internal Server Error in 165ms (ActiveRecord: 9.7ms)
 
 
-  
+
 TypeError ({:if=>:is_dev?} is not a symbol nor a string):
-  
+
 app/controllers/users_controller.rb:8:in `index'
 Started GET "/api/users" for 127.0.0.1 at 2017-07-21 11:30:01 +0100
 Processing by UsersController#index as */*
@@ -1116,10 +1116,10 @@ Processing by UsersController#index as */*
 Completed 500 Internal Server Error in 48ms (ActiveRecord: 0.4ms)
 
 
-  
+
 NoMethodError (undefined method `is_dev?' for UserSerializer:Class
 Did you mean?  is_a?):
-  
+
 app/serializers/user_serializer.rb:3:in `<class:UserSerializer>'
 app/serializers/user_serializer.rb:1:in `<top (required)>'
 app/controllers/users_controller.rb:8:in `index'
@@ -1173,9 +1173,9 @@ Processing by UsersController#index as */*
 Completed 500 Internal Server Error in 96ms (ActiveRecord: 5.5ms)
 
 
-  
+
 TypeError ({:if=>:is_dev?} is not a symbol nor a string):
-  
+
 app/controllers/users_controller.rb:8:in `index'
 Started GET "/api/users" for 127.0.0.1 at 2017-07-21 11:31:01 +0100
 Processing by UsersController#index as */*
@@ -1227,9 +1227,9 @@ Processing by UsersController#index as */*
 Completed 500 Internal Server Error in 123ms (ActiveRecord: 6.0ms)
 
 
-  
+
 TypeError ({:if=>:is_dev?} is not a symbol nor a string):
-  
+
 app/controllers/users_controller.rb:8:in `index'
 Started GET "/api/users" for 127.0.0.1 at 2017-07-21 11:31:47 +0100
 Processing by UsersController#index as */*
@@ -1261,9 +1261,9 @@ Processing by UsersController#index as */*
 Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms)
 
 
-  
+
 ArgumentError (Unknown validator: 'DefaultValidator'):
-  
+
 app/models/user.rb:11:in `<class:User>'
 app/models/user.rb:1:in `<top (required)>'
 app/controllers/users_controller.rb:6:in `index'
@@ -1281,9 +1281,9 @@ Processing by UsersController#index as */*
 Completed 500 Internal Server Error in 116ms (ActiveRecord: 21.2ms)
 
 
-  
+
 NoMethodError (undefined method `validates' for ProjectSerializer:Class):
-  
+
 app/serializers/project_serializer.rb:6:in `<class:ProjectSerializer>'
 app/serializers/project_serializer.rb:1:in `<top (required)>'
 app/controllers/users_controller.rb:8:in `index'
@@ -1294,9 +1294,9 @@ Processing by UsersController#index as */*
 Completed 500 Internal Server Error in 29ms (ActiveRecord: 0.4ms)
 
 
-  
+
 ArgumentError (Unknown validator: 'DefaultValidator'):
-  
+
 app/models/project.rb:9:in `<class:Project>'
 app/models/project.rb:1:in `<top (required)>'
 app/controllers/users_controller.rb:8:in `index'
@@ -1307,9 +1307,9 @@ Processing by UsersController#index as */*
 Completed 500 Internal Server Error in 39ms (ActiveRecord: 0.5ms)
 
 
-  
+
 ArgumentError (Unknown validator: 'DefaultValidator'):
-  
+
 app/models/project.rb:9:in `<class:Project>'
 app/models/project.rb:1:in `<top (required)>'
 app/controllers/users_controller.rb:8:in `index'
@@ -1436,9 +1436,9 @@ Processing by ConversationsController#index as */*
 Completed 500 Internal Server Error in 69ms (ActiveRecord: 0.0ms)
 
 
-  
+
 NoMethodError (undefined method `authenticate_user!' for #<ConversationsController:0x007fcaf84bf0a8>):
-  
+
 activesupport (5.1.2) lib/active_support/callbacks.rb:413:in `block in make_lambda'
 activesupport (5.1.2) lib/active_support/callbacks.rb:197:in `block (2 levels) in halting'
 actionpack (5.1.2) lib/abstract_controller/callbacks.rb:12:in `block (2 levels) in <module:Callbacks>'
@@ -1500,9 +1500,9 @@ Processing by ConversationsController#index as */*
 Completed 500 Internal Server Error in 55ms (ActiveRecord: 0.0ms)
 
 
-  
+
 NoMethodError (undefined method `authenticate_user' for #<ConversationsController:0x007fcaf952df20>):
-  
+
 activesupport (5.1.2) lib/active_support/callbacks.rb:413:in `block in make_lambda'
 activesupport (5.1.2) lib/active_support/callbacks.rb:197:in `block (2 levels) in halting'
 actionpack (5.1.2) lib/abstract_controller/callbacks.rb:12:in `block (2 levels) in <module:Callbacks>'
@@ -1724,9 +1724,9 @@ Completed 200 OK in 35ms (Views: 9.2ms | ActiveRecord: 9.6ms)
 
 
 Started GET "/api/conversations/1" for 127.0.0.1 at 2017-07-21 13:36:44 +0100
-  
+
 ActionController::RoutingError (No route matches [GET] "/api/conversations/1"):
-  
+
 actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
 actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
 railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
@@ -1756,9 +1756,9 @@ Completed 204 No Content in 2ms (ActiveRecord: 0.5ms)
 
 
 Started GET "/api/conversation" for 127.0.0.1 at 2017-07-21 13:37:09 +0100
-  
+
 ActionController::RoutingError (No route matches [GET] "/api/conversation"):
-  
+
 actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
 actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
 railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
@@ -1782,9 +1782,9 @@ puma (3.9.1) lib/puma/server.rb:435:in `process_client'
 puma (3.9.1) lib/puma/server.rb:299:in `block in run'
 puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
 Started GET "/api/conversation/1" for 127.0.0.1 at 2017-07-21 13:37:13 +0100
-  
+
 ActionController::RoutingError (No route matches [GET] "/api/conversation/1"):
-  
+
 actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
 actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
 railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
@@ -1808,9 +1808,9 @@ puma (3.9.1) lib/puma/server.rb:435:in `process_client'
 puma (3.9.1) lib/puma/server.rb:299:in `block in run'
 puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
 Started GET "/api/conversations/1" for 127.0.0.1 at 2017-07-21 13:37:16 +0100
-  
+
 ActionController::RoutingError (No route matches [GET] "/api/conversations/1"):
-  
+
 actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
 actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
 railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
@@ -1840,9 +1840,9 @@ Completed 204 No Content in 2ms (ActiveRecord: 0.3ms)
 
 
 Started POST "/api/messages" for 127.0.0.1 at 2017-07-21 13:39:31 +0100
-  
+
 ActionController::RoutingError (No route matches [POST] "/api/messages"):
-  
+
 actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
 actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
 railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
@@ -1906,9 +1906,9 @@ Completed 200 OK in 10ms (Views: 0.9ms | ActiveRecord: 2.6ms)
 
 
 Started GET "/api/conversations/1" for 127.0.0.1 at 2017-07-21 13:40:38 +0100
-  
+
 ActionController::RoutingError (No route matches [GET] "/api/conversations/1"):
-  
+
 actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
 actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
 railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
@@ -2051,12 +2051,12 @@ Processing by UsersController#index as */*
 Completed 500 Internal Server Error in 178ms (ActiveRecord: 4.6ms)
 
 
-  
+
 ActiveRecord::StatementInvalid (PG::UndefinedColumn: ERROR:  column conversations.user_id does not exist
 LINE 1: ...LECT "conversations".* FROM "conversations" WHERE "conversat...
                                                              ^
 : SELECT "conversations".* FROM "conversations" WHERE "conversations"."user_id" = $1):
-  
+
 app/controllers/users_controller.rb:8:in `index'
 Started GET "/api/users" for 127.0.0.1 at 2017-07-21 13:48:23 +0100
 Processing by UsersController#index as */*
@@ -2105,9 +2105,9 @@ Completed 200 OK in 577ms (Views: 473.6ms | ActiveRecord: 49.2ms)
 
 
 Started GET "/api/conversations/1" for 127.0.0.1 at 2017-07-21 13:49:04 +0100
-  
+
 ActionController::RoutingError (No route matches [GET] "/api/conversations/1"):
-  
+
 actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
 actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
 railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
@@ -2131,9 +2131,9 @@ puma (3.9.1) lib/puma/server.rb:435:in `process_client'
 puma (3.9.1) lib/puma/server.rb:299:in `block in run'
 puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
 Started GET "/api/conversations/1" for 127.0.0.1 at 2017-07-21 13:49:05 +0100
-  
+
 ActionController::RoutingError (No route matches [GET] "/api/conversations/1"):
-  
+
 actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
 actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
 railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
@@ -2227,9 +2227,9 @@ Processing by UsersController#index as */*
 Completed 500 Internal Server Error in 71ms (ActiveRecord: 2.1ms)
 
 
-  
+
 ActiveRecord::HasManyThroughAssociationNotFoundError (Could not find the association :messages in model User):
-  
+
 app/controllers/users_controller.rb:8:in `index'
 Started GET "/api/users" for 127.0.0.1 at 2017-07-21 13:52:33 +0100
 Processing by UsersController#index as */*
@@ -2931,9 +2931,9 @@ Processing by UsersController#index as */*
 Completed 500 Internal Server Error in 303ms (ActiveRecord: 19.0ms)
 
 
-  
+
 ArgumentError (wrong number of arguments (given 1, expected 0)):
-  
+
 app/serializers/user_serializer.rb:19:in `thread'
 app/controllers/users_controller.rb:8:in `index'
 Started GET "/api/conversations" for 127.0.0.1 at 2017-07-21 14:04:13 +0100
@@ -2993,9 +2993,9 @@ Processing by UsersController#index as */*
 Completed 500 Internal Server Error in 80ms (ActiveRecord: 13.0ms)
 
 
-  
+
 NoMethodError (undefined method `messages' for #<User:0x007fad066691e8>):
-  
+
 app/controllers/users_controller.rb:8:in `index'
 Started GET "/api/users" for 127.0.0.1 at 2017-07-21 14:11:35 +0100
 Processing by UsersController#index as */*
@@ -3040,9 +3040,9 @@ Completed 200 OK in 214ms (Views: 172.5ms | ActiveRecord: 17.4ms)
 
 
 Started GET "/api/conversations/1" for 127.0.0.1 at 2017-07-21 14:12:19 +0100
-  
+
 ActionController::RoutingError (No route matches [GET] "/api/conversations/1"):
-  
+
 actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
 actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
 railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
@@ -3099,9 +3099,9 @@ Completed 200 OK in 39ms (Views: 9.4ms | ActiveRecord: 7.3ms)
 
 
 Started GET "/api/conversations/1" for 127.0.0.1 at 2017-07-21 14:13:29 +0100
-  
+
 ActionController::RoutingError (No route matches [GET] "/api/conversations/1"):
-  
+
 actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
 actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
 railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
@@ -3219,9 +3219,9 @@ Processing by UsersController#index as */*
 Completed 500 Internal Server Error in 153ms (ActiveRecord: 31.5ms)
 
 
-  
+
 ActiveRecord::HasManyThroughAssociationNotFoundError (Could not find the association :messages in model User):
-  
+
 app/controllers/users_controller.rb:8:in `index'
 Started GET "/api/users" for 127.0.0.1 at 2017-07-21 14:28:23 +0100
 Processing by UsersController#index as */*
@@ -3427,9 +3427,9 @@ Completed 200 OK in 45ms (Views: 10.9ms | ActiveRecord: 11.3ms)
 
 
 Started GET "/api/conversations/1" for 127.0.0.1 at 2017-07-21 14:41:01 +0100
-  
+
 ActionController::RoutingError (No route matches [GET] "/api/conversations/1"):
-  
+
 actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
 actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
 railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
@@ -3590,9 +3590,9 @@ Completed 200 OK in 4ms (Views: 0.9ms | ActiveRecord: 1.3ms)
 
 
 Started GET "/api/conversations/1" for 127.0.0.1 at 2017-07-21 15:05:45 +0100
-  
+
 ActionController::RoutingError (No route matches [GET] "/api/conversations/1"):
-  
+
 actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
 actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
 railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
@@ -3669,10 +3669,10 @@ Processing by ConversationsController#index as */*
 Completed 500 Internal Server Error in 44ms (ActiveRecord: 0.4ms)
 
 
-  
+
   [1m[36mCACHE Conversation Load (0.1ms)[0m  [1m[34mSELECT  "conversations".* FROM "conversations" WHERE (sender_id = 8 OR receiver_id = 8) LIMIT $1[0m  [["LIMIT", 11]]
 NoMethodError (undefined method `messages' for #<ActiveRecord::Relation []>):
-  
+
 app/controllers/conversations_controller.rb:7:in `index'
   [1m[36mCACHE Conversation Load (0.0ms)[0m  [1m[34mSELECT  "conversations".* FROM "conversations" WHERE (sender_id = 8 OR receiver_id = 8) LIMIT $1[0m  [["LIMIT", 11]]
 Started GET "/api/conversations" for 127.0.0.1 at 2017-07-21 15:08:43 +0100
@@ -3682,11 +3682,11 @@ Processing by ConversationsController#index as */*
 Completed 500 Internal Server Error in 52ms (ActiveRecord: 0.3ms)
 
 
-  
+
   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE ("users"."id" != $1) LIMIT $2[0m  [["id", 8], ["LIMIT", 11]]
 NoMethodError (undefined method `conversations' for #<User::ActiveRecord_Relation:0x007fc195eab790>
 Did you mean?  connection):
-  
+
 app/controllers/conversations_controller.rb:7:in `index'
   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE ("users"."id" != $1) LIMIT $2[0m  [["id", 8], ["LIMIT", 11]]
 Started GET "/api/conversations" for 127.0.0.1 at 2017-07-21 15:09:20 +0100
@@ -3696,9 +3696,9 @@ Processing by ConversationsController#index as */*
 Completed 500 Internal Server Error in 38ms (ActiveRecord: 0.8ms)
 
 
-  
+
 TypeError (no implicit conversion of Conversation::ActiveRecord_Relation into Integer):
-  
+
 app/controllers/conversations_controller.rb:7:in `index'
 Started GET "/api/conversations" for 127.0.0.1 at 2017-07-21 15:09:33 +0100
 Processing by ConversationsController#index as */*
@@ -3746,11 +3746,11 @@ Processing by ConversationsController#index as */*
 Completed 500 Internal Server Error in 93ms (ActiveRecord: 0.6ms)
 
 
-  
+
   [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE ("users"."id" != $1) LIMIT $2[0m  [["id", 8], ["LIMIT", 11]]
 NoMethodError (undefined method `conversations' for #<User::ActiveRecord_Relation:0x007fc196178978>
 Did you mean?  connection):
-  
+
 app/controllers/conversations_controller.rb:7:in `index'
   [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE ("users"."id" != $1) LIMIT $2[0m  [["id", 8], ["LIMIT", 11]]
 Started GET "/api/conversations" for 127.0.0.1 at 2017-07-21 15:10:33 +0100
@@ -3760,9 +3760,9 @@ Processing by ConversationsController#index as */*
 Completed 500 Internal Server Error in 35ms (ActiveRecord: 0.9ms)
 
 
-  
+
 TypeError (no implicit conversion of String into Integer):
-  
+
 app/controllers/conversations_controller.rb:7:in `index'
 Started GET "/api/conversations" for 127.0.0.1 at 2017-07-21 15:10:51 +0100
 Processing by ConversationsController#index as */*
@@ -3774,13 +3774,13 @@ Processing by ConversationsController#index as */*
 Completed 500 Internal Server Error in 211ms (ActiveRecord: 0.2ms)
 
 
-  
+
   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE ("users"."id" != $1) LIMIT $2[0m  [["id", 8], ["LIMIT", 11]]
   [1m[36mCACHE Conversation Load (0.0ms)[0m  [1m[34mSELECT  "conversations".* FROM "conversations" WHERE (sender_id = 8 OR receiver_id = 8) LIMIT $1[0m  [["LIMIT", 11]]
 NameError (undefined local variable or method `conversations' for #<ConversationsController:0x007fc1994198a0>
 Did you mean?  @conversations
                conversations_url):
-  
+
 app/controllers/conversations_controller.rb:7:in `index'
   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE ("users"."id" != $1) LIMIT $2[0m  [["id", 8], ["LIMIT", 11]]
   [1m[36mCACHE Conversation Load (0.0ms)[0m  [1m[34mSELECT  "conversations".* FROM "conversations" WHERE (sender_id = 8 OR receiver_id = 8) LIMIT $1[0m  [["LIMIT", 11]]
@@ -3910,9 +3910,9 @@ Completed 200 OK in 61ms (Views: 46.7ms | ActiveRecord: 11.9ms)
 
 
 Started GET "/api/conversations/1" for 127.0.0.1 at 2017-07-21 15:15:56 +0100
-  
+
 ActionController::RoutingError (No route matches [GET] "/api/conversations/1"):
-  
+
 actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
 actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
 railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
@@ -4139,5 +4139,3 @@ Processing by ProjectsController#index as */*
 [active_model_serializers]   [1m[36mTender Load (0.5ms)[0m  [1m[34mSELECT "tenders".* FROM "tenders" WHERE "tenders"."project_id" = $1[0m  [["project_id", 1]]
 [active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (46.0ms)
 Completed 200 OK in 95ms (Views: 77.2ms | ActiveRecord: 10.3ms)
-
-
