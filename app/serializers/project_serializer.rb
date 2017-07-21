@@ -4,4 +4,5 @@ class ProjectSerializer < ActiveModel::Serializer
   has_many :tenders
 
 
+
 end
