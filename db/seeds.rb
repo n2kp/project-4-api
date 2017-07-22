@@ -33,29 +33,29 @@ projo2 = Project.create!(
   user_id: 4)
 
 
-timbid = Tender.create!(
-  bid: 1000,
-  pitch:"I will make you website and I will do it to an alright standard if thats what you want",
-  status: "pending",
-  is_active: true,
-  user_id: 4,
-  project_id: 1)
-
-simbid = Tender.create!(
-  bid: 2000,
-  pitch:"I am too good to pass up",
-  status: "pending",
-  is_active: true,
-  user_id: 2,
-  project_id: 1)
-
-tim2bid = Tender.create!(
-  bid: 10000,
-  pitch:"I will knock this website up for you within a few hours with rails",
-  status: "pending",
-  is_active: true,
-  user_id: 1,
-  project_id: 2)
+# timbid = Tender.create!(
+#   bid: 1000,
+#   pitch:"I will make you website and I will do it to an alright standard if thats what you want",
+#   status: "pending",
+#   is_active: true,
+#   user_id: 4,
+#   project_id: 1)
+#
+# simbid = Tender.create!(
+#   bid: 2000,
+#   pitch:"I am too good to pass up",
+#   status: "pending",
+#   is_active: true,
+#   user_id: 2,
+#   project_id: 1)
+#
+# tim2bid = Tender.create!(
+#   bid: 10000,
+#   pitch:"I will knock this website up for you within a few hours with rails",
+#   status: "pending",
+#   is_active: true,
+#   user_id: 1,
+#   project_id: 2)
 
 review1 = Review.create!(
   body: "Worked with this guy previously, great work ethic",
