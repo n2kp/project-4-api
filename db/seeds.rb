@@ -6,9 +6,9 @@ end
 
  User.create!(username: "timr",  firstname:"Tim", lastname:"Rooke", email: "tim@justo.com", password: "password",password_confirmation: "password", image:"tim.jpeg", is_dev:true, tech_stack:"HTML, CSS, JS, Angular")
 
- User.create!(username: "nimeshp",  firstname:"Nimesh", lastname:"Patel", email: "nimesh@justo.com", password: "password",password_confirmation: "password", image:"nimesh.jpeg", is_dev:false)
+ User.create!(username: "nimeshp",  firstname:"Nimesh", lastname:"Patel", email: "nimesh@justo.com", password: "password",password_confirmation: "password", image:"http://images.naldzgraphics.net/2012/01/14-floral.jpg", is_dev:false)
 
- User.create!(username: "jamesc",  firstname:"James", lastname:"Clarke", email: "james@justo.com", password: "password",password_confirmation: "password", image:"james.jpeg", is_dev:false)
+ User.create!(username: "jamesc",  firstname:"James", lastname:"Clarke", email: "james@justo.com", password: "password",password_confirmation: "password", image:"https://www.google.co.uk/search?q=marvel+prototyping+logo&tbm=isch&imgil=b0TpaKArDmQpYM%253A%253BkpJZr83dcEF3oM%253Bhttps%25253A%25252F%25252Fwww.supermonitoring.com%25252Fblog%25252Fcreate-cool-prototypes-with-marvel%25252F&source=iu&pf=m&fir=b0TpaKArDmQpYM%253A%252CkpJZr83dcEF3oM%252C_&usg=__v_iQ1CsnopUTAu9OARRg_JjofIo%3D&biw=1687&bih=926&ved=0ahUKEwiij9qU4J3VAhWqIMAKHbwKAsoQyjcIUg&ei=ibhzWeKmOKrBgAa8lYjQDA#imgrc=CqvYwCtC_x0HNM:", is_dev:false)
 
 projo1 = Project.create!(
   title:"Floral Ecommerce website needed ASAP",
