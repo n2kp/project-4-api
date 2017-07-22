@@ -16,6 +16,7 @@ class TendersController < ApplicationController
   # POST /tenders
   def create
     @tender = Tender.new(tender_params)
+    @tender.user = current_user
 
     if @tender.save
       render json: @tender, status: :created, location: @tender
@@ -46,6 +47,6 @@ class TendersController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def tender_params
-      params.require(:tender).permit(:bid, :pitch, :image, :is_active, :status, :user_id, :project_id)
+      params.permit(:bid, :pitch, :image, :is_active, :status, :user_id, :project_id)
     end
 end
