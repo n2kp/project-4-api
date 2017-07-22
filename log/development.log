@@ -3313,65 +3313,6 @@ Processing by UsersController#index as */*
 [active_model_serializers] No serializer found for resource: #<Conversation id: 1, sender_id: 4, receiver_id: 3, created_at: "2017-07-21 12:36:29", updated_at: "2017-07-21 12:36:29">
 [active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (193.53ms)
 Completed 200 OK in 230ms (Views: 184.9ms | ActiveRecord: 14.6ms)
-<<<<<<< HEAD
-Started GET "/api/users" for 127.0.0.1 at 2017-07-21 15:24:29 +0100
-Started GET "/api/users" for 127.0.0.1 at 2017-07-21 15:24:29 +0100
-  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-
-ActiveRecord::PendingMigrationError (
-
-Migrations are pending. To resolve this issue, run:
-
-        bin/rails db:migrate RAILS_ENV=development
-
-):
-
-activerecord (5.1.2) lib/active_record/migration.rb:576:in `check_pending!'
-activerecord (5.1.2) lib/active_record/migration.rb:553:in `call'
-actionpack (5.1.2) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
-activesupport (5.1.2) lib/active_support/callbacks.rb:97:in `run_callbacks'
-actionpack (5.1.2) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
-actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
-actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
-actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
-railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
-railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
-activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
-activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
-activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
-railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
-actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
-actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
-rack (2.0.3) lib/rack/runtime.rb:22:in `call'
-activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
-actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
-actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
-rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
-rack-cors (1.0.0) lib/rack/cors.rb:93:in `call'
-railties (5.1.2) lib/rails/engine.rb:522:in `call'
-puma (3.9.1) lib/puma/configuration.rb:224:in `call'
-puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
-puma (3.9.1) lib/puma/server.rb:435:in `process_client'
-puma (3.9.1) lib/puma/server.rb:299:in `block in run'
-puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
-  [1m[35m (6.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-
-ActiveRecord::PendingMigrationError (
-
-Migrations are pending. To resolve this issue, run:
-
-        bin/rails db:migrate RAILS_ENV=development
-
-):
-
-activerecord (5.1.2) lib/active_record/migration.rb:576:in `check_pending!'
-activerecord (5.1.2) lib/active_record/migration.rb:553:in `call'
-actionpack (5.1.2) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
-activesupport (5.1.2) lib/active_support/callbacks.rb:97:in `run_callbacks'
-actionpack (5.1.2) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
-actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
-actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
-=======
 
 
 Started GET "/api/users" for 127.0.0.1 at 2017-07-21 14:38:57 +0100
@@ -3490,7 +3431,6 @@ Started GET "/api/conversations/1" for 127.0.0.1 at 2017-07-21 14:41:01 +0100
 ActionController::RoutingError (No route matches [GET] "/api/conversations/1"):
 
 actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
->>>>>>> c3907ecea2e4de84821f09b59a430fe66fe25025
 actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
 railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
 railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
@@ -3512,26 +3452,6 @@ puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
 puma (3.9.1) lib/puma/server.rb:435:in `process_client'
 puma (3.9.1) lib/puma/server.rb:299:in `block in run'
 puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
-<<<<<<< HEAD
-Started GET "/api/users" for 127.0.0.1 at 2017-07-21 15:24:32 +0100
-  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-
-ActiveRecord::PendingMigrationError (
-
-Migrations are pending. To resolve this issue, run:
-
-        bin/rails db:migrate RAILS_ENV=development
-
-):
-
-activerecord (5.1.2) lib/active_record/migration.rb:576:in `check_pending!'
-activerecord (5.1.2) lib/active_record/migration.rb:553:in `call'
-actionpack (5.1.2) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
-activesupport (5.1.2) lib/active_support/callbacks.rb:97:in `run_callbacks'
-actionpack (5.1.2) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
-actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
-actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
-=======
 Started GET "/api/conversations/1/messages" for 127.0.0.1 at 2017-07-21 14:41:12 +0100
 Processing by MessagesController#index as */*
   Parameters: {"conversation_id"=>"1"}
@@ -3674,7 +3594,6 @@ Started GET "/api/conversations/1" for 127.0.0.1 at 2017-07-21 15:05:45 +0100
 ActionController::RoutingError (No route matches [GET] "/api/conversations/1"):
 
 actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
->>>>>>> c3907ecea2e4de84821f09b59a430fe66fe25025
 actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
 railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
 railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
