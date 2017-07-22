@@ -7,8 +7,8 @@ class User < ApplicationRecord
 
   has_many :conversations, class_name: "Conversation", foreign_key: "sender_id"
 
-  validates :username, presence: true
-  validates :email, uniqueness: true, presence: true
+  validates :username, presence: true, uniqueness: true
+  validates :email, presence: true,  uniqueness: true
   validates :firstname, presence: true
   validates :lastname, presence: true
 
