@@ -15,6 +15,10 @@ class ApplicationController < ActionController::API
     nil
   end
 
+  def current_project
+    @current_project ||= Project.find([:id]) 
+  end
+
   private
 
     def id_found?
