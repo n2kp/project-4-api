@@ -1,4 +1,4 @@
-[User, Project, Tender].each do |model|
+[User, Project, Tender, Conversation].each do |model|
   ActiveRecord::Base.connection.execute("TRUNCATE #{model.table_name} RESTART IDENTITY CASCADE")
 end
 
@@ -74,3 +74,21 @@ review1 = Review.create!(
   rating: 3,
   creator_id: 4,
   receiver_id: 1)
+
+
+conversation1 = Conversation.create!(
+  sender_id: 1,
+  receiver_id: 2)
+
+# conversation1 = Conversation.create!(
+#   sender_id: 2,
+#   receiver_id: 3)
+#
+#
+# conversation1 = Conversation.create!(
+#   sender_id: 2,
+#   receiver_id: 4)
+#
+# conversation1 = Conversation.create!(
+#   sender_id: 1,
+#   receiver_id: 3)

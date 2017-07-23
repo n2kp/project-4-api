@@ -7,6 +7,11 @@ class ConversationsController < ApplicationController
     render json: @conversations, include: 'conversations.messages'
   end
 
+  def show
+    @conversations = Conversation.find(params[:id])
+    render json: @conversations, include: 'conversations.messages'
+  end
+
   def create
     if Conversation.between(params[:sender_id], params[:receiver_id]).present?
       @conversation = Conversation.between(params[:sender_id], params[:receiver_id]).first
@@ -15,7 +20,7 @@ class ConversationsController < ApplicationController
     end
 
     # redirect_to conversation_messages_path(@conversation)
-    render json: @conversation
+    render json: @conversation, status: :ok
   end
 
   private
