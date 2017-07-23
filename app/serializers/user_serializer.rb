@@ -1,5 +1,6 @@
 class UserSerializer < ActiveModel::Serializer
-  attributes :id, :username, :firstname, :lastname, :email, :image, :is_dev, :reviews_created, :reviews_received, :average_rating
+
+  attributes :id, :username, :firstname, :lastname, :email, :image_src, :is_dev, :reviews_created, :reviews_received, :average_rating
   attribute :portfolio_url, if: :is_dev?
   attribute :linkedin_url, if: :is_dev?
   attribute :github_url, if: :is_dev?
@@ -20,6 +21,10 @@ class UserSerializer < ActiveModel::Serializer
     object.reviews_received.map { |review| review.rating }.reduce(:+).to_f / object.reviews_received.length
     # reviews_received = object.tenders.map { |tender| tender.user.reviews_received }
     # reviews_received[0].map { |review| review.rating }.reduce(:+).to_f / reviews_received[0].length
+  end
+
+  def image_src
+    object.image.url
   end
 
 end

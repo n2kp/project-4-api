@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+
   has_secure_password
   has_many :projects
   has_many :tenders
@@ -12,5 +13,6 @@ class User < ApplicationRecord
   validates :firstname, presence: true
   validates :lastname, presence: true
 
+  mount_uploader :image, ImageUploader
 
 end

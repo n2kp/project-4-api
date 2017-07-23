@@ -15,7 +15,8 @@ class TendersController < ApplicationController
 
   # POST /tenders
   def create
-    @tender = Tender.new(tender_params)
+    # @tender = Tender.new(tender_params)
+    @tender = Tender.new(Uploader.upload(tender_params))
     @tender.user = current_user
 
     if @tender.save
@@ -27,7 +28,8 @@ class TendersController < ApplicationController
 
   # PATCH/PUT /tenders/1
   def update
-    if @tender.update(tender_params)
+    # if @tender.update(tender_params)
+    if @tender.update(Uploader.upload(tender_params))
       render json: @tender
     else
       render json: @tender.errors, status: :unprocessable_entity
@@ -47,6 +49,6 @@ class TendersController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def tender_params
-      params.permit(:bid, :pitch, :image, :is_active, :status, :user_id, :project_id)
+      params.permit(:bid, :pitch, :base64, :is_active, :status, :user_id, :project_id)
     end
 end
