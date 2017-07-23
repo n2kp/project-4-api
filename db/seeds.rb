@@ -20,6 +20,58 @@ projo1 = Project.create!(
   is_active:true,
   is_priority:false,
   user_id: 3)
+projo1 = Project.create!(
+  title:"Floral Ecommerce website needed ASAP",
+  description:"I need a responsive commerce website to be build asap. I have some flowers and stuff that I really need to sell online because people need an online based flower experience to rival that of apple, uber and airB&B. Please help me!",
+  project_deadline: Date.new(2017, 4, 28),
+  bid_deadline: Date.new(2017, 3, 28),
+  tech_stack: "HTML, CSS, JS",
+  budget: 1000,
+  is_active:true,
+  is_priority:false,
+  user_id: 3)
+projo1 = Project.create!(
+  title:"Floral Ecommerce website needed ASAP",
+  description:"I need a responsive commerce website to be build asap. I have some flowers and stuff that I really need to sell online because people need an online based flower experience to rival that of apple, uber and airB&B. Please help me!",
+  project_deadline: Date.new(2017, 4, 28),
+  bid_deadline: Date.new(2017, 3, 28),
+  tech_stack: "HTML, CSS, JS",
+  budget: 1000,
+  is_active:true,
+  is_priority:false,
+  user_id: 3)
+projo1 = Project.create!(
+  title:"Floral Ecommerce website needed ASAP",
+  description:"I need a responsive commerce website to be build asap. I have some flowers and stuff that I really need to sell online because people need an online based flower experience to rival that of apple, uber and airB&B. Please help me!",
+  project_deadline: Date.new(2017, 4, 28),
+  bid_deadline: Date.new(2017, 3, 28),
+  tech_stack: "HTML, CSS, JS",
+  budget: 1000,
+  is_active:true,
+  is_priority:false,
+  user_id: 3)
+
+projo1 = Project.create!(
+  title:"Floral Ecommerce website needed ASAP",
+  description:"I need a responsive commerce website to be build asap. I have some flowers and stuff that I really need to sell online because people need an online based flower experience to rival that of apple, uber and airB&B. Please help me!",
+  project_deadline: Date.new(2017, 4, 28),
+  bid_deadline: Date.new(2017, 3, 28),
+  tech_stack: "HTML, CSS, JS",
+  budget: 1000,
+  is_active:true,
+  is_priority:false,
+  user_id: 3)
+
+projo1 = Project.create!(
+  title:"Floral Ecommerce website needed ASAP",
+  description:"I need a responsive commerce website to be build asap. I have some flowers and stuff that I really need to sell online because people need an online based flower experience to rival that of apple, uber and airB&B. Please help me!",
+  project_deadline: Date.new(2017, 4, 28),
+  bid_deadline: Date.new(2017, 3, 28),
+  tech_stack: "HTML, CSS, JS",
+  budget: 1000,
+  is_active:true,
+  is_priority:false,
+  user_id: 3)
 
 projo2 = Project.create!(
   title:"Sweetshop app needed ASAP",
@@ -31,6 +83,17 @@ projo2 = Project.create!(
   is_active:true,
   is_priority:true,
   user_id: 4)
+
+projo2 = Project.create!(
+  title:"Sweetshop app needed ASAP",
+  description:"Please, someone, I need help. I want to ruin the teeth of all the childern in the area and need an app to help me distribute my sugary sweets",
+  project_deadline: Date.new(2018, 1, 1),
+  bid_deadline: Date.new(2017, 9, 9),
+  tech_stack: "JS",
+  budget: 19000,
+  is_active:true,
+  is_priority:true,
+  user_id: 3)
 
 
 # timbid = Tender.create!(
