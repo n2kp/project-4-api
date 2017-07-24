@@ -194,7 +194,7 @@ Tender.create!([
     status: "pending"
   }, {
     bid: 7000,
-    pitch: "I have always wanted to make a site like this bu t have never had the oppertunity so I would love to have a go and build this for you. I am willing to charge less then your budget becasue I would like the experience.",
+    pitch: "I have always wanted to make a site like this bu t have never had the opportunity so I would love to have a go and build this for you. I am willing to charge less then your budget becasue I would like the experience.",
     is_active: true,
     user_id: 2,
     project_id: 1,

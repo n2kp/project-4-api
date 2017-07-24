@@ -1,6 +1,7 @@
 class UserSerializer < ActiveModel::Serializer
 
-  attributes :id, :username, :firstname, :lastname, :email, :image_src, :is_dev, :reviews_created, :reviews_received, :average_rating
+  attributes :id, :username, :firstname, :lastname, :email, :image_src, :is_dev, :reviews_created, :reviews_received, :average_rating, :tenders
+  
   attribute :portfolio_url, if: :is_dev?
   attribute :linkedin_url, if: :is_dev?
   attribute :github_url, if: :is_dev?
