@@ -163,7 +163,7 @@ Project.create!([
     is_priority: true,
     user_id: 4
   }, {
-    title: "Russian Ecommerce Sitw",
+    title: "Russian Ecommerce Site",
     description: "After they recently helped me with some work buisness elections, I want to set up a secure app that is available on iOS and Andriod and on a desktop, so that I can repay them by pumping unnessary about money in their economy.",
     project_deadline: Date.new(2017, 9, 25),
     bid_deadline: Date.new(2017, 11, 13),
@@ -183,6 +183,136 @@ Project.create!([
     is_priority: false,
     user_id: 10
   }])
+
+Tender.create!([
+  {
+    bid: 8500,
+    pitch: "I made the Interflora website so i know what I am doing and I know how quickly I can get it done in. This is why I charge more.",
+    is_active: true,
+    user_id: 1,
+    project_id: 1,
+    status: "pending"
+  }, {
+    bid: 7000,
+    pitch: "I have always wanted to make a site like this bu t have never had the oppertunity so I would love to have a go and build this for you. I am willing to charge less then your budget becasue I would like the experience.",
+    is_active: true,
+    user_id: 2,
+    project_id: 1,
+    status: "pending"
+  }, {
+    bid: 5000,
+    pitch: "This should be very easy to implement and I can not forsee any major issues, however I would need to see your cuurent code to make sure I can work with it. The tack stack is one I use often so am very proficent in.",
+    is_active: true,
+    user_id: 5,
+    project_id: 2,
+    status: "pending"
+  }, {
+    bid: 4500,
+    pitch: "I am willing to do you a discount because I am opening my own resturant and would like to pick your brain about a few things. You scratch my back, I will return the favour.",
+    is_active: true,
+    user_id: 6,
+    project_id: 2,
+    status: "pending"
+  }, {
+    bid: 3000,
+    pitch: "Never done what you need or worked with the tech stack, but how hard can it really be, right?",
+    is_active: true,
+    user_id: 7,
+    project_id: 2,
+    status: "pending"
+  }, {
+    bid: 2200,
+    pitch: "I'm bored and this seems like a project I can get done with quickly, hence the offer. I will however never use this site on my portfolio becasue I do not need people thinking I work with rubbish.",
+    is_active: true,
+    user_id: 8,
+    project_id: 3,
+    status: "pending"
+  }, {
+    bid: 135000,
+    pitch: "I voted Brexit so I'm happy to contribute to anything that will get us out of the EU quicker. My work is excellent so I am not cheap, but realistically, can you afford to mess this up more than you already have?",
+    is_active: true,
+    user_id: 1,
+    project_id: 4,
+    status: "pending"
+  }, {
+    bid: 120000,
+    pitch: "Hate that we are leave the European Community but as long as I am getting something out of it, who cares. Can negotiate on rate if you can secure me a meeting with the Vlad.",
+    is_active: true,
+    user_id: 2,
+    project_id: 4,
+    status: "pending"
+  }, {
+    bid: 100000,
+    pitch: "I am all about the undercut. I can save you £20000 on your budget, but write you a bill for the full budget, meaning you polititians can take a handsome cut under the table. Win-Win!",
+    is_active: true,
+    user_id: 5,
+    project_id: 4,
+    status: "pending"
+  }, {
+    bid: 25000,
+    pitch: "Hate that you want to ruin kids teeth, but I am the best developer you will meet, so even though I do not agree with what your are doing, doesn't mean I do not want to get paid. But in the same sense, does not mean I can not rip you off as well.",
+    is_active: true,
+    user_id: 6,
+    project_id: 5,
+    status: "pending"
+  }, {
+    bid: 16000,
+    pitch: "Hate kids, love your plan! Discount price offered. Simple!",
+    is_active: true,
+    user_id: 7,
+    project_id: 5,
+    status: "pending"
+  }, {
+    bid: 18000,
+    pitch: "Sounds exciting. Great buisness plan. Love JavaScript. I am definiatly your man!",
+    is_active: true,
+    user_id: 8,
+    project_id: 5,
+    status: "pending"
+  }, {
+    bid: 22000,
+    pitch: "This sounds a lot more complicated than I think you are making out. I am happy to take on the work but my price reflects the fact that I think this will take longer to build than you beileve.",
+    is_active: true,
+    user_id: 1,
+    project_id: 5,
+    status: "pending"
+  }, {
+    bid: 30000,
+    pitch: "Love dentists, would not have my prefect smile without them, so would be my pleasure to help you out in creating your site. Master at React as I used to work at Facebook for may years.",
+    is_active: true,
+    user_id: 2,
+    project_id: 6,
+    status: "pending"
+  }, {
+    bid: 29900,
+    pitch: "Just wanted to bid slightly less than your budget so hopefully you choose me. I got all the technical skills you need and have a great design background too!",
+    is_active: true,
+    user_id: 5,
+    project_id: 6,
+    status: "pending"
+  }, {
+    bid: 74000,
+    pitch: "I am Russian and anything to help my beloved country, I will do. Happy to lower my bid if you can prove someone can do it cheaper that me, just personal message me with the proof and I will rebid.",
+    is_active: true,
+    user_id: 6,
+    project_id: 7,
+    status: "pending"
+  }, {
+    bid: 75000,
+    pitch: "Would love to take on this job because I too have been tangoed but after scoping it out, this is my best price. I will work night and day to make the site as googd as possible.",
+    is_active: true,
+    user_id: 7,
+    project_id: 7,
+    status: "pending"
+  }, {
+    bid: 35000,
+    pitch: "No way anyone can do that amount of work for the budget you set. I am sure of it. However if someone bids cheaper than me, then they are soem cowboy who just wants the money, not the challenge and glory that code gives me. Ball is in your court bud.",
+    is_active: true,
+    user_id: 8,
+    project_id: 8,
+    status: "pending"
+  }])
+
 
 
 # timbid = Tender.create!(
