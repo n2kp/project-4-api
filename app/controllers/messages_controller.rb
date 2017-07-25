@@ -13,7 +13,6 @@ class MessagesController < ApplicationController
     end
     render json: @conversation
     @message = @conversation.messages.new
-
   end
 
   def create
