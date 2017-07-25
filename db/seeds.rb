@@ -337,15 +337,15 @@ conversation1 = Conversation.create!(
   sender_id: 1,
   receiver_id: 2)
 
-# conversation1 = Conversation.create!(
-#   sender_id: 2,
-#   receiver_id: 3)
-#
-#
-# conversation1 = Conversation.create!(
-#   sender_id: 2,
-#   receiver_id: 4)
-#
-# conversation1 = Conversation.create!(
-#   sender_id: 1,
-#   receiver_id: 3)
+conversation1 = Conversation.create!(
+  sender_id: 2,
+  receiver_id: 3)
+
+
+conversation1 = Conversation.create!(
+  sender_id: 2,
+  receiver_id: 4)
+
+conversation1 = Conversation.create!(
+  sender_id: 1,
+  receiver_id: 3)
