@@ -2,7 +2,8 @@ class AuthenticationsController < ApplicationController
   skip_before_action :authenticate_user!
 
   def register
-    user = User.new(user_params)
+    user = User.new(Uploader.upload(user_params))
+
     if user.save
       render json: user, status: :ok
     else
@@ -23,6 +24,6 @@ class AuthenticationsController < ApplicationController
   private
 
   def user_params
-    params.permit(:username, :firstname, :lastname, :email, :password, :password_confirmation, :image, :is_dev, :portfolio_url, :linkedin_url, :github_url, :tech_stack)
+    params.permit(:username, :firstname, :lastname, :email, :password, :password_confirmation, :base64, :is_dev, :portfolio_url, :linkedin_url, :github_url, :tech_stack )
   end
 end
