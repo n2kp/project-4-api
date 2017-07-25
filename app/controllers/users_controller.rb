@@ -10,12 +10,12 @@ class UsersController < ApplicationController
 
   # GET /users/1
   def show
-    render json: @user, include: ['conversations.messages', 'conversations.messages.user', 'reviews_created.creator', 'reviews_received.receiver']
+    render json: @user, include: ['conversations.messages', 'conversations.messages.user', 'reviews_created.creator', 'reviews_received.receiver', 'projects.tenders']
   end
 
   # POST /users
   def create
-    @user = User.new(user_params)
+    # @user = User.new(user_params)
     @user = User.new(Uploader.upload(user_params))
 
     if @user.save
