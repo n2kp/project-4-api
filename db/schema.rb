@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170722114409) do
+ActiveRecord::Schema.define(version: 20170725110355) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -87,6 +87,8 @@ ActiveRecord::Schema.define(version: 20170722114409) do
     t.string "linkedin_url"
     t.string "github_url"
     t.string "tech_stack"
+    t.bigint "github_id"
+    t.string "facebook_id"
   end
 
   add_foreign_key "messages", "conversations"
