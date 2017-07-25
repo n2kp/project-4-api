@@ -20,9 +20,11 @@ class MessagesController < ApplicationController
     @message.user_id = current_user.id
 
     if @message.save
-      render json: @conversation
+      render json: @message
     end
   end
+
+
 
   private
     def message_params

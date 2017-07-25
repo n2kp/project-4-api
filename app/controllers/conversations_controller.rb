@@ -1,5 +1,6 @@
 class ConversationsController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_conversation, only: [:update]
 
   def index
     @users = User.where.not(id: current_user.id)
@@ -23,7 +24,20 @@ class ConversationsController < ApplicationController
     render json: @conversation, status: :ok
   end
 
+  def update
+    if @conversation.update(conversation_params)
+      render json: @conversation
+    else
+      render json: @conversation.errors, status: :unprocessable_entity
+    end
+  end
+
   private
+    # Use callbacks to share common setup or constraints between actions.
+    def set_conversation
+      @conversation = Conversation.find(params[:id])
+    end
+
     def conversation_params
       params.permit(:sender_id, :receiver_id)
     end

@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     resources :reviews
     resources :tenders
     resources :projects
-    resources :conversations, only: [:index, :create, :show] do
+    resources :conversations, only: [:index, :create, :show, :update] do
       resources :messages, only: [:index, :create]
     end
 
