@@ -16,7 +16,7 @@ class OauthController < ApplicationController
         header: { "User-Agent" => "HTTParty", "Accept" => "application/json"}
       }).parsed_response
 
-      p profile
+      # p profile
 
       user = User.where("github_id = :github_id OR email = :email", github_id: profile["id"], email: profile["email"]).first
 

@@ -11,10 +11,15 @@ class AuthenticationsController < ApplicationController
     end
   end
 
+  def refresh
+    token = Auth.issue({ id: current_user.id, is_dev: current_user.is_dev })
+    render json: { token: token, user: UserSerializer.new(current_user) }, status: :ok
+  end
+
   def login
     user = User.find_by_email(params[:email])
     if user && user.authenticate(params[:password])
-      token = Auth.issue({ id: user.id })
+      token = Auth.issue({ id: user.id, is_dev: user.is_dev })
       render json: { token: token, user: UserSerializer.new(user) }, status: :ok
     else
       render json: { errors: ["Invalid login credentials."] }, status: 401

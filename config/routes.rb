@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     post 'oauth/github'
     post '/register', to: 'authentications#register'
     post '/login', to: 'authentications#login'
+    get '/refresh', to: 'authentications#refresh'
 
     resources :users
     resources :reviews
