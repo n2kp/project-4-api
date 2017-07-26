@@ -4,8 +4,8 @@ class OauthController < ApplicationController
   def github
     token = HTTParty.post("https://github.com/login/oauth/access_token", {
       query: {
-        client_id: ENV["GITHUB_RUBYOAUTH_CLIENT_ID"],
-        client_secret: ENV["GITHUB_RUBYOAUTH_CLIENT_SECRET"],
+        client_id: ENV["JUSTO_GITHUB_CLIENT_ID"],
+        client_secret: ENV["JUSTO_GITHUB_CLIENT_SECRET"],
         code: params[:code]
       },
       headers: { "Accept" => "application/json" }
@@ -35,8 +35,8 @@ class OauthController < ApplicationController
   def facebook
     token = HTTParty.post('https://facebook.com/login/oauth/access_token', {
       query: {
-        client_id: ENV["FACEBOOK_APP_ID"],
-        client_secret: ENV["FACEBOOK_APP_SECRET"],
+        client_id: ENV["JUSTO_FACEBOOK_CLIENT_ID"],
+        client_secret: ENV["JUSTO_FACEBOOK_CLIENT_SECRET"],
         redirect_uri: 'http://localhost:7000/',
         code: params[:code]
       },
