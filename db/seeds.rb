@@ -199,27 +199,27 @@ Tender.create!([
     user_id: 2,
     project_id: 1,
     status: "pending"
-  # }, {
-  #   bid: 5000,
-  #   pitch: "This should be very easy to implement and I can not forsee any major issues, however I would need to see your cuurent code to make sure I can work with it. The tack stack is one I use often so am very proficent in.",
-  #   is_active: true,
-  #   user_id: 5,
-  #   project_id: 2,
-  #   status: "pending"
-  # }, {
-  #   bid: 4500,
-  #   pitch: "I am willing to do you a discount because I am opening my own resturant and would like to pick your brain about a few things. You scratch my back, I will return the favour.",
-  #   is_active: true,
-  #   user_id: 6,
-  #   project_id: 2,
-  #   status: "pending"
-  # }, {
-  #   bid: 3000,
-  #   pitch: "Never done what you need or worked with the tech stack, but how hard can it really be, right?",
-  #   is_active: true,
-  #   user_id: 7,
-  #   project_id: 2,
-  #   status: "pending"
+  }, {
+    bid: 5000,
+    pitch: "This should be very easy to implement and I can not forsee any major issues, however I would need to see your cuurent code to make sure I can work with it. The tack stack is one I use often so am very proficent in.",
+    is_active: true,
+    user_id: 5,
+    project_id: 2,
+    status: "pending"
+  }, {
+    bid: 4500,
+    pitch: "I am willing to do you a discount because I am opening my own resturant and would like to pick your brain about a few things. You scratch my back, I will return the favour.",
+    is_active: true,
+    user_id: 6,
+    project_id: 2,
+    status: "pending"
+  }, {
+    bid: 3000,
+    pitch: "Never done what you need or worked with the tech stack, but how hard can it really be, right?",
+    is_active: true,
+    user_id: 7,
+    project_id: 2,
+    status: "pending"
   }, {
     bid: 2200,
     pitch: "I'm bored and this seems like a project I can get done with quickly, hence the offer. I will however never use this site on my portfolio becasue I do not need people thinking I work with rubbish.",
