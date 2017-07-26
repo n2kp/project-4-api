@@ -320,13 +320,13 @@ review1 = Review.create!(
   creator_id: 3,
   receiver_id: 1)
 
-review1 = Review.create!(
+review2 = Review.create!(
   body: "My best friend, he is a code ninja",
   rating: 9,
   creator_id: 4,
   receiver_id: 2)
 
-review1 = Review.create!(
+review3 = Review.create!(
   body: "Hate this guy, he has such an attitude",
   rating: 3,
   creator_id: 4,
