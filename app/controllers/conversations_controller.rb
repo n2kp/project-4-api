@@ -20,7 +20,6 @@ class ConversationsController < ApplicationController
       @conversation = Conversation.create!(conversation_params)
     end
 
-    # redirect_to conversation_messages_path(@conversation)
     render json: @conversation, status: :ok
   end
 

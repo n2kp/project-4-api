@@ -1,6 +1,6 @@
 class Project < ApplicationRecord
   belongs_to :user
-  has_many :tenders
+  has_many :tenders, dependent: :destroy
 
   validates :title, presence: true, length: { minimum: 5 }
   validates :description, presence: true, length: { minimum: 25 }

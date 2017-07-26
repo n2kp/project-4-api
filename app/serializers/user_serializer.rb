@@ -1,18 +1,18 @@
 class UserSerializer < ActiveModel::Serializer
 
-  attributes :id, :username, :firstname, :lastname, :email, :image_src, :is_dev, :reviews_created, :reviews_received, :average_rating, :tenders, :projects
-
-  attribute :portfolio_url, if: :is_dev?
-  attribute :linkedin_url, if: :is_dev?
-  attribute :github_url, if: :is_dev?
-  attribute :tech_stack, if: :is_dev?
+  attributes :id, :username, :firstname, :lastname, :email, :image_src, :is_dev, :average_rating, :tenders, :projects
 
   has_many :projects
   has_many :tenders
   has_many :conversations
 
-  has_many :reviews_created
-  has_many :reviews_received
+  has_many :reviews_created, serializer: ReviewSerializer
+  has_many :reviews_received, serializer: ReviewSerializer
+
+  attribute :portfolio_url, if: :is_dev?
+  attribute :linkedin_url, if: :is_dev?
+  attribute :github_url, if: :is_dev?
+  attribute :tech_stack, if: :is_dev?
 
   def is_dev?
     object.is_dev

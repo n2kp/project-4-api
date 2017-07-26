@@ -1,8 +1,8 @@
 class User < ApplicationRecord
 
   has_secure_password validations: false
-  has_many :projects
-  has_many :tenders
+  has_many :projects, dependent: :destroy
+  has_many :tenders, dependent: :destroy
   has_many :reviews_created, class_name: "Review", foreign_key: "creator_id"
   has_many :reviews_received, class_name: "Review", foreign_key: "receiver_id"
 

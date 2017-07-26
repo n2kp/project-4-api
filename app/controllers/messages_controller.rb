@@ -8,10 +8,12 @@ class MessagesController < ApplicationController
   def index
     @messages = @conversation.messages
 
-    if @messages.last && @messages.last.user_id != current_user.id
-      @messages.last.update(read: true)
-    end
-    render json: @conversation
+      p @messages.last
+      @messages.where.not(user_id: current_user.id).update_all(read: true)
+      p "---------------------------------"
+      p @messages.last
+
+    render json: @conversation, include: 'conversations.messages.read'
     @message = @conversation.messages.new
   end
 
@@ -24,10 +26,16 @@ class MessagesController < ApplicationController
     end
   end
 
-
+  def update
+    if @conversation.messages.update(message_params)
+      render json: @conversation
+    else
+      render json: @conversation.errors, status: :unprocessable_entity
+    end
+  end
 
   private
     def message_params
-      params.permit(:body, :user_id, :conversation_id)
+      params.permit(:body, :read, :user_id, :conversation_id)
     end
 end
