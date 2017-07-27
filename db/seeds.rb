@@ -39,7 +39,7 @@ User.create!([
     email: "james@justo.com",
     password: "password",
     password_confirmation: "password",
-    image: "https://cms-assets.tutsplus.com/uploads/users/30/posts/22683/preview_image/prev.png",
+    image: "https://s3-eu-west-1.amazonaws.com/wdi27-london/my-passport-photo.jpg",
     is_dev: false
   }, {
     username: "mickyginger",
@@ -191,7 +191,8 @@ Tender.create!([
     is_active: true,
     user_id: 1,
     project_id: 1,
-    status: "pending"
+    status: "pending",
+    image: "http://www.clker.com/cliparts/O/v/c/b/i/6/generic-logo.svg"
   }, {
     bid: 7000,
     pitch: "I have always wanted to make a site like this bu t have never had the opportunity so I would love to have a go and build this for you. I am willing to charge less then your budget becasue I would like the experience.",
