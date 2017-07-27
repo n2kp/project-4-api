@@ -35,8 +35,13 @@ class OauthController < ApplicationController
   def facebook
     token = HTTParty.post('https://facebook.com/login/oauth/access_token', {
       query: {
+<<<<<<< HEAD
         client_id: ENV["JUSTO_FACEBOOK_APP_ID"],
         client_secret: ENV["JUSTO_FACEBOOK_APP_SECRET"],
+=======
+        client_id: ENV["JUSTO_FACEBOOK_CLIENT_ID"],
+        client_secret: ENV["JUSTO_FACEBOOK_CLIENT_SECRET"],
+>>>>>>> development
         redirect_uri: 'http://localhost:7000/',
         code: params[:code]
       },
