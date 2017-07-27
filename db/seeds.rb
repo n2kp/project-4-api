@@ -20,7 +20,7 @@ User.create!([
     email: "tim@justo.com",
     password: "password",
     password_confirmation: "password",
-    image: "tim.jpeg",
+    image: "https://scontent-lht6-1.xx.fbcdn.net/v/t1.0-9/10609487_10152259133751701_530836782283067901_n.jpg?oh=13d1ca3867da6ea95f14fe7e8db0bb72&oe=59EE085E",
     is_dev: true,
     tech_stack: "HTML, CSS, JS, Angular"
   }, {

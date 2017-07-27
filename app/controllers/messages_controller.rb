@@ -7,11 +7,7 @@ class MessagesController < ApplicationController
 
   def index
     @messages = @conversation.messages
-
-      p @messages.last
       @messages.where.not(user_id: current_user.id).update_all(read: true)
-      p "---------------------------------"
-      p @messages.last
 
     render json: @conversation, include: 'conversations.messages.read'
     @message = @conversation.messages.new
