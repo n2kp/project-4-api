@@ -2,6 +2,7 @@
   ActiveRecord::Base.connection.execute("TRUNCATE #{model.table_name} RESTART IDENTITY CASCADE")
 end
 
+
 User.create!([
   {
     username: "simona",
@@ -101,6 +102,7 @@ User.create!([
     is_dev: false
   }])
 
+
 Project.create!([
   {
     title: "Floral Ecommerce website needed ASAP",
@@ -183,6 +185,7 @@ Project.create!([
     is_priority: false,
     user_id: 10
   }])
+
 
 Tender.create!([
   {
@@ -315,38 +318,36 @@ Tender.create!([
   }])
 
 
-review1 = Review.create!(
-  body: "Worked with this guy previously, great work ethic",
-  rating: 8,
-  creator_id: 3,
-  receiver_id: 1)
-
-review2 = Review.create!(
-  body: "My best friend, he is a code ninja",
-  rating: 9,
-  creator_id: 4,
-  receiver_id: 2)
-
-review3 = Review.create!(
-  body: "Hate this guy, he has such an attitude",
-  rating: 3,
-  creator_id: 4,
-  receiver_id: 1)
-
-
-conversation1 = Conversation.create!(
-  sender_id: 1,
-  receiver_id: 2)
-
-conversation1 = Conversation.create!(
-  sender_id: 2,
-  receiver_id: 3)
+Review.create!([
+  {
+    body: "Worked with this guy previously, great work ethic",
+    rating: 8,
+    creator_id: 3,
+    receiver_id: 1
+  }, {
+    body: "My best friend, he is a code ninja",
+    rating: 9,
+    creator_id: 4,
+    receiver_id: 2
+  }, {
+    body: "Hate this guy, he has such an attitude",
+    rating: 3,
+    creator_id: 4,
+    receiver_id: 1
+  }])
 
 
-conversation1 = Conversation.create!(
-  sender_id: 2,
-  receiver_id: 4)
-
-conversation1 = Conversation.create!(
-  sender_id: 1,
-  receiver_id: 3)
+Conversation.create!([
+  {
+    sender_id: 1,
+    receiver_id: 2
+  }, {
+    sender_id: 2,
+    receiver_id: 3
+  }, {
+    sender_id: 2,
+    receiver_id: 4
+  }, {
+    sender_id: 1,
+    receiver_id: 3
+  }])
