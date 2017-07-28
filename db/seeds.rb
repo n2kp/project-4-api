@@ -10,7 +10,7 @@ User.create!([
     email: "simon@justo.com",
     password: "password",
     password_confirmation: "password",
-    image:"simon.jpeg",
+    remote_image_url:"http://i.imgur.com/bJ9MGSA.png",
     is_dev: true,
     tech_stack:"HTML, CSS, JS, Angular"
   }, {
@@ -20,7 +20,7 @@ User.create!([
     email: "tim@justo.com",
     password: "password",
     password_confirmation: "password",
-    image: "https://scontent-lht6-1.xx.fbcdn.net/v/t1.0-9/10609487_10152259133751701_530836782283067901_n.jpg?oh=13d1ca3867da6ea95f14fe7e8db0bb72&oe=59EE085E",
+    remote_image_url: "http://i.imgur.com/UrvBK2x.png",
     is_dev: true,
     tech_stack: "HTML, CSS, JS, Angular"
   }, {
@@ -30,7 +30,7 @@ User.create!([
     email: "nimesh@justo.com",
     password: "password",
     password_confirmation: "password",
-    image: "http://images.naldzgraphics.net/2012/01/14-floral.jpg",
+    remote_image_url: "http://i.imgur.com/cvyXOR2.png",
     is_dev: false
   }, {
     username: "jamesc",
@@ -39,7 +39,7 @@ User.create!([
     email: "james@justo.com",
     password: "password",
     password_confirmation: "password",
-    image: "https://s3-eu-west-1.amazonaws.com/wdi27-london/my-passport-photo.jpg",
+    remote_image_url: "http://i.imgur.com/jAf5Vrk.png",
     is_dev: false
   }, {
     username: "mickyginger",
@@ -48,7 +48,7 @@ User.create!([
     email: "mhyden@ga.co",
     password: "password",
     password_confirmation: "password",
-    image: "https://avatars0.githubusercontent.com/u/3531085?v=4&s=400",
+    remote_image_url: "http://i.imgur.com/b8i8ewJ.png",
     is_dev: true,
     tech_stack: "HTML, CSS, JS, Angular, Ruby, React, Node"
   }, {
@@ -58,7 +58,7 @@ User.create!([
     email: "eisacke@ga.co",
     password: "password",
     password_confirmation: "password",
-    image: "https://avatars0.githubusercontent.com/u/12997768?v=4&s=400",
+    remote_image_url: "http://i.imgur.com/Oi6cLEA.png",
     is_dev: true,
     tech_stack: "HTML, CSS, JS, Bootstrap, Ruby"
   }, {
@@ -68,7 +68,7 @@ User.create!([
     email: "mdavis@ga.co",
     password: "password",
     password_confirmation: "password",
-    image: "https://www.linkedin.com/in/markjdvs/photo/",
+    remote_image_url: "http://i.imgur.com/CX6CNeh.png",
     is_dev: true,
     tech_stack: "HTML, CSS, JS, Angular"
   }, {
@@ -78,7 +78,7 @@ User.create!([
     email: "sdomesjo@ga.com",
     password: "password",
     password_confirmation: "password",
-    image: "https://www.linkedin.com/in/sam-domesjo/photo/",
+    remote_image_url: "http://i.imgur.com/TmZx3UZ.png",
     is_dev: true,
     tech_stack: "HTML, CSS, JS, Angular"
   }, {
@@ -88,7 +88,7 @@ User.create!([
     email: "dtrump@whitehouse.com",
     password: "password",
     password_confirmation: "password",
-    image: "http://www.japantimes.co.jp/wp-content/uploads/2015/09/f-BRI-trump-a-20150905-200x200.jpg",
+    remote_image_url: "http://i.imgur.com/3DojaYO.png",
     is_dev: false
   }, {
     username: "msmay",
@@ -97,7 +97,7 @@ User.create!([
     email: "teresam@number10.com",
     password: "password",
     password_confirmation: "password",
-    image: "http://www.westernspring.co.uk/wp-content/uploads/2017/05/Theresa-May-Not-200x200.png",
+    remote_image_url: "http://i.imgur.com/vfUW5kS.png",
     is_dev: false
   }])
 
